@@ -1,0 +1,968 @@
+# BRIGHTLOOP — MASTER DEVELOPMENT & ENHANCEMENT PROMPT
+## Complete SaaS Subscription Management, Billing & Business Intelligence Platform
+
+### ROLE AND OBJECTIVE
+
+Act as a senior SaaS architect, full-stack developer, database engineer, fintech application specialist, UI/UX designer and performance optimization expert.
+
+Your task is to enhance and complete the existing **BRIGHTLOOP** application. Do not create a new disconnected application or replace working features unnecessarily.
+
+Implement every requirement below in the existing application. All pages, buttons, forms, actions, charts, refresh controls, workflows and integrations must be fully functional.
+
+**Product tagline:** Every Subscription. Every Payment. One Clear Picture.
+
+The application must be professional, responsive, secure, visually attractive and production-oriented.
+
+---
+
+# 1. LOGIN PAGE AND AUTHENTICATION
+
+Redesign and improve the login page with the following requirements.
+
+### Login fields
+
+The login page must contain:
+
+1. Email Address
+2. Role Selection Dropdown:
+   - Admin
+   - Staff
+   - Client
+3. Password
+4. Show/Hide Password
+5. Remember Me
+6. Forgot Password
+7. Login Button
+
+### Role-based authentication
+
+- Users must select their role before logging in.
+- Authentication must validate the email, password and selected role together.
+- The selected role must match the role assigned to the registered account.
+- Do not allow users to access another role's dashboard by changing the dropdown.
+- Implement all role checks on the backend, not only in the frontend.
+
+### Special Admin Login Restriction
+
+- Only one designated Admin account is permitted.
+- The Admin account must use a specific, preconfigured email address.
+- Only that authorized email address can access the Admin dashboard.
+- Do not allow staff or clients to register themselves as Admin.
+- Do not allow another Admin account to be created.
+- Store the authorized Admin email securely in backend configuration.
+- Enforce the restriction at the database and backend authorization levels.
+
+Staff and Client accounts must have their own registered credentials and permissions.
+
+### Forgot Password
+
+- When a user selects Forgot Password, request their registered email address.
+- Generate a secure, single-use, time-limited password reset link.
+- Send the reset link to the user's registered email address.
+- Allow the user to create and confirm a new password.
+- Expire the reset link after its validity period and prevent reuse.
+- Show appropriate success and error messages.
+- Never expose whether an unrelated email account exists.
+- Integrate an actual email delivery service. If credentials are unavailable, clearly identify development mode rather than falsely claiming an email was sent.
+
+---
+
+# 2. ADMIN DASHBOARD ENHANCEMENTS
+
+The Admin dashboard must provide a complete financial and operational overview.
+
+### A. Invoice vs Realized Cash Trend
+
+Create a dedicated interactive chart comparing:
+
+- Total invoices generated.
+- Actual cash collected.
+- Outstanding invoice amount.
+- Difference between invoiced revenue and realized cash.
+
+Provide three viewing options:
+
+- Monthly
+- Month-over-Month (MoM)
+- Year-over-Year (YoY)
+
+Requirements:
+
+- Display accurate values from the database.
+- Allow users to select date ranges.
+- Include interactive tooltips.
+- Show percentage changes and previous-period comparisons.
+- Provide separate, clearly labelled invoice and cash series.
+- Make the graph responsive on desktop, tablet and mobile.
+- Do not treat generated invoices as collected cash.
+
+### B. Needs Your Attention — Detailed Highlighting
+
+Improve the Needs Your Attention section.
+
+Display important issues using clear categories:
+
+1. Overdue invoices
+2. Failed payments
+3. Upcoming subscription renewals
+4. Pending payment confirmations
+5. Expired quotations
+6. Subscriptions requiring renewal
+7. Failed billing cycles
+8. Unreconciled transactions
+9. Pending staff tasks
+10. Pending approval requests
+
+For each item, display:
+
+- Customer name
+- Invoice or subscription reference
+- Amount, where applicable
+- Due date or relevant date
+- Current status
+- Reason for the alert
+- Recommended action
+- Direct navigation to the relevant record
+
+Use appropriate priority indicators such as Critical, High, Medium and Low.
+
+Do not display generic alerts without actionable information.
+
+---
+
+# 3. SUBSCRIPTION MANAGEMENT — UPGRADE AND DOWNGRADE
+
+Add Upgrade Plan and Downgrade Plan options inside the Subscription Actions menu.
+
+### Required workflow
+
+1. Admin or an authorized user selects a subscription.
+2. Select Upgrade or Downgrade.
+3. Display available eligible plans.
+4. Calculate the current plan value and proposed plan value.
+5. Calculate the price difference.
+6. Show applicable taxes, discounts and any prorated amount.
+7. Display the effective date.
+8. Show the final amount payable or credit adjustment.
+9. Ask for confirmation:
+
+   **Do you want to proceed with this plan change?**
+
+   - Yes — Confirm Change
+   - No — Cancel
+
+10. Only execute the change after confirmation.
+
+Additional requirements:
+
+- Preserve the previous subscription details.
+- Maintain a complete plan-change history.
+- Apply billing adjustments accurately.
+- Prevent duplicate charges.
+- Clearly explain whether the change takes effect immediately or at the next billing cycle.
+- Respect the subscription's configured upgrade and downgrade permissions.
+
+---
+
+# 4. UI AND FUNCTIONALITY FIXES
+
+Resolve the following existing issues without breaking other modules.
+
+### A. Keyboard Control Key
+
+- Fix the non-working Control key functionality.
+- Ensure Ctrl-based keyboard shortcuts work correctly wherever they are supported.
+- Check browser focus, event handling and keyboard event conflicts.
+- Do not override standard browser shortcuts unnecessarily.
+
+### B. Invoice Bill Popup
+
+- When an invoice is clicked, display its complete bill details.
+- Add a clearly visible Close button.
+- Allow users to close the invoice using the Escape key.
+- Allow closing through an appropriate close icon or outside-click behaviour.
+- Ensure the popup works on mobile and desktop.
+- Closing the popup must not accidentally modify invoice data.
+
+### C. Billing Console — Rescan Cycle
+
+- Fix the Rescan Cycle button.
+- Make it execute the actual billing-cycle validation process.
+- Show processing, success, warning and failure states.
+- Display the number of records checked.
+- Identify missing or failed billing events.
+- Prevent duplicate invoices through idempotency controls.
+- Make the action responsive and prevent repeated accidental submissions.
+
+### D. Invoice Refresh
+
+- Fix the Refresh Invoices button.
+- Refresh invoice records from the backend.
+- Update invoice counts, statuses, outstanding amounts and overdue information.
+- Show a loading indicator and a clear success or error response.
+- Prevent duplicate requests from repeated clicks.
+
+### E. Reconciliation Refresh
+
+- Fix the Refresh button in the Reconciliation tab.
+- Fetch the latest payment and invoice reconciliation records.
+- Update matched, unmatched and partially matched transaction counts.
+- Display the last refresh time.
+- Show clear error messages when refresh fails.
+
+### F. Approval Box Refresh
+
+- Fix the Approval Box refresh functionality.
+- Fetch current pending, approved and rejected approval requests.
+- Update counts and statuses immediately.
+
+### G. Security & Health Refresh
+
+- Fix the refresh controls in Security & Health.
+- Retrieve current security events, audit records and background job statuses.
+- Display the last successful refresh time.
+- Show errors instead of silently failing.
+
+Every refresh and rescan control must execute a real backend operation, not just animate or change the button appearance.
+
+---
+
+# 5. ADMIN INVOICE, GST AND PAYMENT MANAGEMENT
+
+Modify the Invoice & GST module.
+
+### Remove Proceed to Payment
+
+Remove the existing **Proceed to Payment** action from the Admin invoice actions.
+
+Replace it with:
+
+- Request Payment
+- Record Payment
+- Confirm Payment
+- View Payment Details
+
+### Request Payment
+
+When the Admin clicks Request Payment:
+
+- Select the concerned client.
+- Select the relevant subscription and invoice.
+- Display the total payable amount.
+- Enter or confirm the requested amount.
+- Send the payment request to the concerned client.
+- Record the request date and status.
+- Track whether the request is pending, paid or overdue.
+
+### Record Client Payment
+
+Allow the Admin to record how much the client has paid towards a subscription.
+
+Required details:
+
+- Client name
+- Subscription reference
+- Invoice reference
+- Total invoice amount
+- Amount already paid
+- Newly received payment amount
+- Remaining balance
+- Payment date
+- Payment method
+- Transaction reference
+- Notes
+
+### Payment Confirmation
+
+- Allow Admin to confirm a received payment.
+- Display the payment method to the Admin.
+- Support UPI, bank transfer, card, cash and other configured methods.
+- Maintain payment history.
+- Automatically update invoice payment status.
+
+Payment status must be calculated correctly:
+
+- Unpaid
+- Partially Paid
+- Paid
+- Overdue
+- Failed
+
+Prevent overpayment unless an explicitly authorized adjustment workflow is used.
+
+Maintain a full record of payment confirmation and changes.
+
+---
+
+# 6. AUTOMATIC INVOICE GENERATION
+
+Implement reliable automatic invoice generation based on subscription billing cycles.
+
+### Requirements
+
+- Generate invoices automatically when the configured billing cycle reaches its due date.
+- Do not depend on the Admin manually creating invoices.
+- Identify subscriptions whose billing cycles have ended or become due.
+- Generate invoices for eligible subscriptions.
+- Display the number of invoices generated for each billing run.
+- Show the billing run date and time.
+- Show successful, skipped and failed invoice generations.
+- Display the relevant customer and subscription references.
+- Allow the Admin to inspect the generated invoices.
+
+### Admin Billing Summary
+
+Display:
+
+- Total subscriptions checked
+- Total invoices generated
+- Total invoices skipped
+- Total failed invoice generations
+- Total invoice amount generated
+- Billing run date
+- Last successful billing run
+
+### Idempotency Test — Re-run Billing
+
+Implement a dedicated **Re-run Billing / Idempotency Test** action.
+
+Expected workflow:
+
+1. Execute a billing run.
+2. Record the number of invoices generated.
+3. Execute the same billing run again for the same billing period.
+4. Verify that no duplicate invoices are created.
+5. Display the result.
+
+Expected result:
+
+**ZERO duplicate invoices created.**
+
+Use database uniqueness constraints, billing-cycle identifiers, transactions and idempotent backend logic.
+
+Do not rely only on frontend checks.
+
+---
+
+# 7. GENTLE CHASE — DIRECT PAYMENT FOLLOW-UP
+
+Make Gentle Chase fully functional.
+
+### Requirements
+
+Allow authorized Admin or Staff users to send payment reminders directly to the concerned client.
+
+Supported channels:
+
+- Registered email address
+- Registered phone number through an integrated SMS service
+
+Before sending, display:
+
+- Customer name
+- Email address or phone number
+- Invoice reference
+- Outstanding amount
+- Due date
+- Message preview
+
+Provide professional, polite reminder templates.
+
+Example:
+
+"Hello [Customer Name], this is a friendly reminder that payment for Invoice [Invoice Number] is currently pending. The outstanding amount is [Amount]. Kindly complete the payment at your convenience. Thank you."
+
+Additional features:
+
+- Edit the message before sending.
+- Select email or SMS.
+- Confirm before sending.
+- Track delivery status where supported.
+- Maintain communication history.
+- Display failed delivery attempts.
+- Allow retry after failure.
+
+Use actual configured email/SMS integrations. Never display a successful delivery status when the provider has not confirmed delivery.
+
+---
+
+# 8. QUOTATION MANAGEMENT
+
+Add a complete quotation-sending workflow.
+
+### Requirements
+
+- Admin or authorized Staff can create quotations.
+- Select the customer.
+- Add products, variants, quantities and prices.
+- Apply eligible discounts and GST.
+- Calculate subtotal and final payable amount.
+- Set quotation validity.
+- Preview the quotation before sending.
+- Send the quotation directly to the customer's registered email address.
+- Provide a downloadable PDF.
+- Track quotation status.
+
+Quotation lifecycle:
+
+Draft → Sent → Viewed (when supported) → Accepted / Rejected / Expired → Converted to Subscription.
+
+Additional requirements:
+
+- Generate unique quotation references.
+- Store quotation history.
+- Prevent expired quotations from being accepted without an authorized extension.
+- Allow authorized users to resend quotations.
+- Maintain a record of email delivery status.
+
+---
+
+# 9. PRODUCT AND VARIANT DETAILS
+
+Make the Products & Variants module interactive.
+
+When the user clicks a product:
+
+- Open a detailed product view or side panel.
+- Display product name.
+- Product description.
+- Product category.
+- Base price.
+- Cost price, visible only to authorized roles.
+- Available variants.
+- Variant-specific prices.
+- Product availability.
+- Active or inactive status.
+- Creation and update dates.
+- Related subscription plans.
+- Related subscriptions where authorized.
+
+Allow authorized Admin users to edit product information.
+
+Display accurate pricing calculations and preserve historical prices in existing invoices and subscriptions.
+
+---
+
+# 10. SUBSCRIPTION DETAILS
+
+When the user clicks a subscription, open its complete detail view.
+
+Display:
+
+- Subscription ID
+- Customer information
+- Product and selected variants
+- Subscription plan
+- Billing frequency
+- Quantity
+- Start date
+- End date
+- Next billing date
+- Base price
+- Variant charges
+- Tax
+- Discount
+- Total subscription amount
+- Amount paid
+- Outstanding balance
+- Subscription status
+- Renewal settings
+- Upgrade/downgrade history
+- Invoice history
+- Payment history
+- Activity timeline
+
+Provide appropriate actions based on user permissions.
+
+The details view must be responsive and easy to navigate.
+
+---
+
+# 11. STAFF TASK MANAGEMENT — ROLLBACK AND UNDO
+
+Add an Undo/Rollback option for accidental task actions.
+
+### Requirements
+
+If Admin or Staff accidentally changes a task status or performs an eligible task action:
+
+- Display a temporary Undo option.
+- Allow the user to reverse the action.
+- Restore the previous task state.
+- Record the original action and rollback in the activity history.
+- Maintain the correct user and timestamp information.
+
+For important changes, provide a confirmation dialog.
+
+Do not allow rollback of completed financial transactions or other irreversible operations through a simple Undo button. Those must use an authorized correction or reversal workflow.
+
+---
+
+# 12. STAFF DASHBOARD — RESTRICTED ACCESS
+
+The Staff dashboard must be designed for day-to-day operational work only.
+
+**Staff must not have Admin control or unrestricted financial access.**
+
+### Remove from Staff
+
+- Admin control settings
+- User and Staff creation
+- Role and permission management
+- Discount rule creation and modification
+- Sensitive financial configuration
+- Security configuration
+- System-wide business settings
+- Unrestricted payment and finance management
+- Company-wide administrative controls
+
+### Staff Dashboard Features
+
+Staff should only see the modules and records they are authorized to handle.
+
+Include:
+
+1. My Assigned Tasks
+2. Task Details
+3. Assigned Customers
+4. Assigned Quotations
+5. Authorized Invoice Follow-ups
+6. Customer Communication
+7. Payment Reminder Tasks
+8. Subscription Support Tasks
+9. Task History
+10. Notifications
+
+### Assigned Task Details
+
+For each task, display:
+
+- Task title
+- Task description
+- Assigned customer
+- Priority
+- Deadline
+- Current status
+- Assignment date
+- Related invoice or subscription reference, where permitted
+- Comments and activity history
+
+### Staff Permissions
+
+- Staff can view their assigned tasks.
+- Staff can update permitted task statuses.
+- Staff can handle authorized customer follow-ups.
+- Staff can prepare and send quotations when permitted.
+- Staff cannot create another Staff or Admin account.
+- Staff cannot change discount rules.
+- Staff cannot access restricted company-wide financial or security information.
+
+Enforce every restriction through backend authorization and record-level permissions.
+
+---
+
+# 13. CLIENT DASHBOARD — PRODUCT, DISCOUNT AND PAYMENT EXPERIENCE
+
+Improve the Client portal to make it customer-friendly and useful.
+
+### A. Product Availability
+
+Display available products to clients.
+
+For each product, show:
+
+- Product name
+- Product description
+- Product image, where available
+- Product features
+- Available variants
+- Pricing
+- Availability status
+- Eligible subscription plans
+
+Only display products that are enabled for customer access.
+
+### B. Available Discounts
+
+Display currently valid discounts.
+
+Show:
+
+- Discount name
+- Discount type
+- Discount value
+- Eligible products or plans
+- Minimum purchase requirement
+- Validity period
+- Applicable conditions
+
+Only show discounts the customer is eligible to use.
+
+Automatically validate discount eligibility before applying it.
+
+### C. Menu-Based Navigation
+
+When the Client clicks a menu item, display the corresponding details.
+
+Examples:
+
+- My Products
+- My Subscriptions
+- My Invoices
+- My Payments
+- Available Discounts
+- My Profile
+- Help & Support
+
+Do not display every section's detailed content simultaneously.
+
+Use clean navigation, meaningful page transitions and proper loading states.
+
+Ensure clients can access only their own information.
+
+### D. Payment Gateway Activation
+
+Make the payment gateway functional.
+
+Requirements:
+
+- Integrate a supported payment gateway such as Razorpay or another configured provider.
+- Support the payment methods available through the selected provider.
+- Display the payable amount and invoice reference.
+- Allow clients to initiate payment.
+- Verify payment status through secure backend verification and provider webhooks.
+- Update invoice and subscription payment status after successful verification.
+- Handle failed, pending and cancelled payments.
+- Prevent duplicate payment processing.
+- Store transaction references.
+- Display payment receipts and payment history.
+
+Use sandbox mode for testing when live credentials are unavailable. Clearly label sandbox transactions.
+
+**Never simulate a successful real payment or claim that a gateway is live without valid credentials and successful integration.**
+
+---
+
+# 14. GLOBAL PERFORMANCE — STRICT TWO-SECOND TARGET
+
+This is one of the most important requirements.
+
+**Every page and normal user interaction should respond within 2 seconds under the expected production workload.**
+
+Optimize:
+
+- Login and dashboard loading.
+- Admin dashboard analytics.
+- Staff task pages.
+- Client dashboard.
+- Product details.
+- Subscription details.
+- Invoice details.
+- Search and filtering.
+- Refresh operations.
+- Reconciliation.
+- Billing console.
+- Charts and reports.
+- Navigation and modal interactions.
+
+### Performance Engineering
+
+Implement:
+
+1. Optimized database queries.
+2. Appropriate database indexes.
+3. Server-side pagination.
+4. Lazy loading for non-critical content.
+5. API response optimization.
+6. Efficient frontend rendering.
+7. Debounced search.
+8. Caching for appropriate read-only data.
+9. Optimized chart rendering.
+10. Background processing for heavy jobs.
+11. Avoid unnecessary API calls.
+12. Avoid duplicate requests.
+13. Proper loading and skeleton states.
+
+### Performance Validation
+
+- Measure actual API response times.
+- Measure page rendering and interaction responsiveness.
+- Test with realistic data volumes.
+- Identify slow endpoints and database queries.
+- Optimize bottlenecks rather than hiding delays with animations.
+
+Target under 2 seconds for normal page loads and common interactions. Clearly report operations that legitimately require longer background processing, such as bulk imports or billing runs.
+
+---
+
+# 15. UI/UX DESIGN — HUMAN-DESIGNED PREMIUM INTERFACE
+
+Completely improve the visual design while preserving the BRIGHTLOOP identity.
+
+The existing typography and color choices look generic and AI-generated. Replace them with a refined, intentional design system.
+
+### A. Typography
+
+Use a professional, human-designed typography combination.
+
+Preferred font options:
+
+- Inter
+- Manrope
+- DM Sans
+- Plus Jakarta Sans
+- IBM Plex Sans
+
+Use a carefully selected combination rather than applying multiple fonts randomly.
+
+Typography must have:
+
+- Clear visual hierarchy.
+- Attractive headings.
+- Comfortable body text.
+- Balanced letter spacing.
+- Appropriate line heights.
+- Consistent font weights.
+- Strong readability across all screen sizes.
+
+Avoid the generic AI-generated dashboard appearance.
+
+### B. Color System
+
+Remove the overly familiar generic AI-generated color appearance.
+
+Create a distinctive, minimal color system with carefully selected combinations.
+
+Possible design direction:
+
+- Deep charcoal or midnight navy for structural elements.
+- Warm ivory or soft off-white for backgrounds.
+- Muted emerald or sage for positive financial indicators.
+- Muted cobalt or slate blue for informational elements.
+- Restrained amber for warnings.
+- Soft coral for critical errors.
+
+Use a maximum of three primary brand colors, supported by neutral shades and semantic status colors.
+
+Requirements:
+
+- Maintain visual consistency across all pages.
+- Use colors purposefully.
+- Avoid excessive gradients.
+- Avoid unnecessary neon colors.
+- Avoid excessive purple-blue AI-style gradients.
+- Maintain accessible contrast.
+- Make charts visually distinct without using too many colors.
+
+### C. Layout and Visual Quality
+
+Create a premium SaaS fintech design.
+
+Include:
+
+- Clean sidebar navigation.
+- Responsive collapsible menu.
+- Refined top navigation.
+- Consistent cards.
+- Elegant tables.
+- Professional data visualizations.
+- Clean modal dialogs.
+- Balanced spacing.
+- Consistent buttons and icons.
+- Attractive empty states.
+- Helpful error states.
+- Clear form validation.
+- Responsive mobile layouts.
+
+Do not make every section look like an identical card.
+
+Use visual variety through spacing, typography, alignment, subtle borders and purposeful layouts.
+
+---
+
+# 16. MOTION GRAPHICS AND MICRO-INTERACTIONS
+
+Introduce smooth, meaningful motion across every major page.
+
+Examples:
+
+### Page Transitions
+- Smooth page entrance.
+- Subtle fade and slide transitions.
+- Consistent navigation transitions.
+
+### Dashboard
+- Gentle KPI number transitions.
+- Smooth chart rendering.
+- Subtle hover interactions.
+- Animated notification indicators.
+
+### Tables and Cards
+- Soft hover states.
+- Smooth row highlighting.
+- Subtle modal entrance and exit.
+- Clear button interaction feedback.
+
+### Forms
+- Smooth focus transitions.
+- Helpful validation animations.
+- Clear success and error feedback.
+
+### Billing and Payments
+- Progress indicators.
+- Payment status transitions.
+- Loading feedback.
+- Confirmation animations.
+
+### Performance Rules
+
+- Motion must improve usability, not distract users.
+- Keep animations subtle and professional.
+- Avoid excessive bouncing, spinning or continuous movement.
+- Use lightweight CSS transitions or optimized animation libraries.
+- Respect reduced-motion accessibility preferences.
+- Never allow animation to block user interaction or delay important content.
+
+---
+
+# 17. RESPONSIVE DESIGN
+
+Every module must work correctly on:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+Ensure:
+
+- Responsive sidebar.
+- Proper mobile navigation.
+- Tables with suitable mobile layouts.
+- Responsive charts.
+- Properly sized dialogs.
+- Touch-friendly controls.
+- No horizontal overflow.
+- Readable typography.
+- Correct spacing.
+- Functional dropdowns and menus.
+
+Do not treat mobile responsiveness as an optional enhancement.
+
+---
+
+# 18. SECURITY AND DATA INTEGRITY
+
+Maintain strict security across all user roles.
+
+Requirements:
+
+- Secure password hashing.
+- Backend role-based authorization.
+- Secure session management.
+- Password reset token expiration.
+- Login rate limiting.
+- Input validation and sanitization.
+- Protection against common web vulnerabilities.
+- Secure payment verification.
+- Customer record isolation.
+- Staff permission enforcement.
+- Admin account restrictions.
+- Immutable audit records for important financial and administrative actions.
+
+Never rely on frontend-only permissions.
+
+All important financial changes must have a traceable history.
+
+---
+
+# 19. TESTING AND ACCEPTANCE CRITERIA
+
+Do not consider the application complete until the following tests pass.
+
+### Authentication
+- Admin login works only for the designated Admin email.
+- No second Admin account can be created.
+- Staff login works with Staff credentials.
+- Client login works with Client credentials.
+- Incorrect role selection is rejected.
+- Password reset link is delivered through the configured email service.
+- Expired reset links are rejected.
+
+### Admin
+- Invoice versus realized cash chart displays accurate monthly, MoM and YoY data.
+- Needs Your Attention displays actionable details.
+- Upgrade and downgrade calculations are correct.
+- Invoice popup can be closed.
+- Request Payment works.
+- Payment confirmation updates the invoice.
+- Automatic invoice generation works.
+- Billing rescan works.
+- Invoice refresh works.
+- Reconciliation refresh works.
+- Approval refresh works.
+- Security & Health refresh works.
+- Gentle Chase sends through the configured channel.
+- Quotations can be sent to customers.
+- Product details open correctly.
+- Subscription details open correctly.
+- Task rollback works for eligible actions.
+- Idempotency test creates zero duplicate invoices.
+
+### Staff
+- Staff cannot access Admin controls.
+- Staff cannot manage discount rules.
+- Staff cannot create Admin or Staff accounts.
+- Staff can see assigned tasks.
+- Staff can view permitted task details.
+- Staff can update authorized task statuses.
+- Staff cannot access unauthorized financial information.
+
+### Client
+- Client can view available products.
+- Client can view eligible discounts.
+- Menu navigation works.
+- Client can view only their own subscriptions and invoices.
+- Payment gateway works in configured sandbox or live mode.
+- Successful payments are verified by the backend.
+- Payment history and receipts are available.
+
+### Performance and UI
+- Normal pages and common interactions meet the two-second target under expected load.
+- All pages are responsive.
+- Typography is consistent and attractive.
+- Color combinations are minimal and intentional.
+- Motion graphics work smoothly.
+- No broken buttons.
+- No dead navigation links.
+- No unresponsive refresh controls.
+- No console errors affecting functionality.
+- No silent backend failures.
+
+---
+
+# 20. FINAL DEVELOPMENT INSTRUCTIONS
+
+Follow these rules throughout implementation:
+
+1. Inspect the existing BRIGHTLOOP codebase before modifying anything.
+2. Preserve existing working features.
+3. Identify and fix existing bugs.
+4. Reuse the existing database and architecture wherever practical.
+5. Implement real backend functionality for every action.
+6. Connect all frontend components to their actual backend endpoints.
+7. Use real database information rather than hardcoded production values.
+8. Implement proper loading, success, error and empty states.
+9. Validate all calculations involving subscriptions, GST, discounts, invoices and payments.
+10. Enforce role-based permissions on the backend.
+11. Never create fake payment confirmations or fake email delivery results.
+12. Do not leave placeholder buttons or decorative controls.
+13. Do not stop after redesigning the dashboard.
+14. Test every major workflow.
+15. Prioritize billing accuracy, payment security and data integrity.
+16. Optimize all common pages and interactions for the two-second performance target.
+17. Complete the implementation module by module.
+
+### FINAL COMMAND
+
+**Upgrade BRIGHTLOOP into a complete, premium, production-oriented subscription management and financial intelligence platform. Implement every requirement in this prompt within the existing application. Prioritize secure role-based access, accurate billing, reliable invoice generation, payment confirmation, functional Admin and Staff workflows, a customer-friendly Client portal, distinctive human-designed UI/UX, meaningful motion graphics and fast performance. Do not provide only a design or prototype. Build, connect, test and verify every feature until the entire application works end to end.**

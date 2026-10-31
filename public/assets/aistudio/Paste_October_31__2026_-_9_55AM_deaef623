@@ -1,0 +1,3323 @@
+Act as a principal SaaS architect, senior full-stack engineer, fintech systems specialist, database architect, product designer, UI/UX expert, security engineer and business intelligence developer.
+
+Your task is to design, develop and implement BRIGHTLOOP PULSE, a complete, professional, production-oriented, full-stack subscription management and recurring revenue operations platform.
+
+Build a real application with working frontend, backend, database, authentication, authorization, business logic, automation, financial calculations, reporting and customer self-service.
+
+This must not be:
+
+A landing-page-only website.
+
+A static dashboard.
+
+A collection of disconnected screens.
+
+A CRUD-only application.
+
+A design prototype with non-functional buttons.
+
+A dashboard containing hardcoded financial figures.
+
+An animation-heavy website that sacrifices performance.
+
+Build a complete SaaS application that a real subscription-based company could use, test and extend.
+
+Most important priorities:
+
+Financial accuracy and billing reliability.
+
+Secure authentication and backend authorization.
+
+Complete subscription and invoice lifecycle.
+
+Persisted database records and connected workflows.
+
+Premium, modern and professional user experience.
+
+Lightweight motion graphics and smooth interactions.
+
+Business intelligence, automation and advanced administration.
+
+Performance, accessibility and maintainable architecture.
+
+Do not sacrifice functional correctness for visual appearance.
+
+1. BUSINESS CONTEXT
+
+Brightloop Software sells subscription-based business software and services.
+
+Its business model includes:
+
+Monthly subscriptions.
+
+Weekly subscriptions.
+
+Daily subscriptions.
+
+Yearly subscriptions.
+
+Optional add-ons.
+
+Products with multiple variants.
+
+Different subscription quantities.
+
+Small-business subscriptions.
+
+Enterprise contracts.
+
+The current business problems include:
+
+Subscriptions tracked in spreadsheets.
+
+Missed renewal dates.
+
+Manually prepared invoices.
+
+Manual payment reconciliation.
+
+Incorrect pricing and tax calculations.
+
+Untracked outstanding payments.
+
+Manual discount management.
+
+Delayed financial reporting.
+
+Poor recurring revenue visibility.
+
+Time-consuming customer follow-ups.
+
+Brightloop Pulse must solve these problems through one integrated platform.
+
+Complete business lifecycle:
+
+Products → Variants → Plans → Quotations → Subscriptions → Recurring Invoices → Payments → Renewals / Closures → Financial Reports → Business Intelligence.
+
+Every module must connect to the relevant records in the other modules.
+
+2. USER ROLES AND ACCESS CONTROL
+
+Implement three primary roles.
+
+Administrator
+
+Full access to the platform.
+
+The administrator can:
+
+Manage products and variants.
+
+Manage subscription plans and plan versions.
+
+Create and manage staff accounts.
+
+Manage customers.
+
+Create quotation templates.
+
+Manage quotations and subscriptions.
+
+Configure taxes.
+
+Create and manage discount rules.
+
+Manage invoices and payments.
+
+Access all financial reports.
+
+Access advanced business intelligence.
+
+Manage approvals.
+
+Configure system settings.
+
+Manage roles and permissions.
+
+View audit records.
+
+Monitor system health.
+
+Configure billing automation.
+
+Only administrators can create staff accounts, discount rules, tax rules and plan behavior configurations.
+
+Internal Staff
+
+Staff can:
+
+Manage assigned customers.
+
+Create and process quotations.
+
+Manage permitted subscriptions.
+
+View and process invoices.
+
+Record payments.
+
+Follow up on outstanding invoices.
+
+Manage assigned tasks.
+
+View permitted operational reports.
+
+Communicate with customers.
+
+Staff cannot:
+
+Create administrator or staff accounts.
+
+Create or modify discount rules.
+
+Configure tax rules.
+
+Modify restricted plan settings.
+
+View cost prices unless specifically authorized.
+
+Access restricted security settings.
+
+Customer
+
+Customers can access only their own information.
+
+They can:
+
+View their profile.
+
+View their subscriptions.
+
+View upcoming renewals.
+
+View invoices.
+
+Download invoices.
+
+View payment history.
+
+View outstanding balances.
+
+Pay invoices through a configured or clearly simulated payment provider.
+
+Request subscription changes.
+
+Pause, resume, renew or close subscriptions where the plan allows.
+
+Never expose another customer's information.
+
+Authorization requirements
+
+Enforce authorization on the backend.
+
+Do not trust frontend role selection or local storage.
+
+Validate permissions at the route, service and data-access levels.
+
+Support custom roles with module-level permissions.
+
+Support view, create, edit, delete, approve and export permissions.
+
+Allow administrators to deactivate staff and revoke sessions.
+
+Record permission-sensitive operations in the audit log.
+
+Explain disabled actions clearly.
+
+3. AUTHENTICATION AND ACCOUNT SECURITY
+
+Implement complete authentication.
+
+Registration
+
+Fields:
+
+Full name.
+
+Email address.
+
+Password.
+
+Confirm password.
+
+Consent checkbox.
+
+Requirements:
+
+Normalize email addresses.
+
+Enforce case-insensitive unique email addresses.
+
+Public registrations must always create Customer accounts.
+
+Public users cannot select staff or administrator roles.
+
+Password requirements
+
+Minimum 9 characters.
+
+At least one uppercase letter.
+
+At least one lowercase letter.
+
+At least one special character.
+
+Live password strength indicator.
+
+Live validation checklist.
+
+Password visibility toggle.
+
+Clear error messages.
+
+Login
+
+Implement:
+
+Email and password.
+
+Remember me.
+
+Forgot password.
+
+Secure session persistence.
+
+Logout.
+
+Repeated failed-login protection.
+
+Session management.
+
+Log out everywhere.
+
+Password recovery
+
+Generate a secure, single-use reset token.
+
+Token expiry: 30 minutes.
+
+Deliver reset links using a configured email provider.
+
+If email is unavailable, provide a clearly labelled development inbox preview.
+
+Never claim that an email was sent when it was not.
+
+Never reveal whether an email address is registered.
+
+Apply the same password requirements during reset.
+
+Use secure password hashing, environment variables, protected sessions, input validation and rate limiting where supported.
+
+Optional administrator two-factor authentication may be included. Clearly label any simulation that is not backed by a real authentication provider.
+
+Demo access
+
+When DEMO_MODE=true, provide a clearly labelled Demo as Admin / Staff / Customer option.
+
+Seed demo accounts through a repeatable seed script. Never ship a universal administrator password in production configuration.
+
+4. PRODUCT MANAGEMENT AND VARIANTS
+
+Create a complete product management module.
+
+Product fields:
+
+Product ID.
+
+Product name.
+
+Product type: Software, Service, Add-on or Physical.
+
+Sales price.
+
+Cost price.
+
+Description.
+
+Internal notes.
+
+Currency.
+
+Status.
+
+Created date.
+
+Updated date.
+
+Features:
+
+Create.
+
+View.
+
+Edit.
+
+Archive.
+
+Search.
+
+Filter.
+
+Sort.
+
+Paginate.
+
+Product detail view.
+
+Live margin calculation.
+
+Product variants
+
+Support multiple variant attributes and values.
+
+Example:
+
+Product: Business Software
+Base price: ₹2,000
+Variant: Brand = Odoo
+Variant additional price: ₹560
+Final unit price: ₹2,560
+
+Display:
+
+Base price.
+
+Variant additional charge.
+
+Quantity.
+
+Final unit price.
+
+Total line amount.
+
+Allow administrators to add and remove variant rows and preview prices.
+
+Archived products must not be available for new quotations. Existing subscriptions and invoices must retain their historical price snapshots.
+
+5. SUBSCRIPTION PLAN MANAGEMENT
+
+Plan fields:
+
+Plan ID.
+
+Plan name.
+
+Associated product.
+
+Description.
+
+Price.
+
+Billing frequency.
+
+Minimum quantity.
+
+Availability start date.
+
+Availability end date.
+
+Tax configuration.
+
+Status.
+
+Supported billing frequencies:
+
+Daily.
+
+Weekly.
+
+Monthly.
+
+Yearly.
+
+Plan behavior settings:
+
+Auto-close at end date.
+
+Allow early closure.
+
+Allow pause.
+
+Allow renewal.
+
+Only administrators can configure these settings.
+
+Features:
+
+Create, edit, activate and deactivate plans.
+
+Plan comparison cards.
+
+Detailed plan tables.
+
+Customer-facing plan preview.
+
+Validate availability dates and minimum quantity.
+
+Prevent new subscriptions to unavailable plans.
+
+Plan versioning
+
+When an administrator changes a price or tax configuration:
+
+Create a new version.
+
+Record its effective date.
+
+Preserve existing subscriptions and invoices.
+
+Allow changes to apply to new subscriptions only or at the next renewal.
+
+Show an impact preview before saving.
+
+Support scheduled changes and cancellation.
+
+Restore previous settings by creating a new version, never by rewriting historical records.
+
+6. CUSTOMER MANAGEMENT
+
+Create a centralized customer database.
+
+Customer fields:
+
+Customer ID.
+
+Customer or company name.
+
+Email.
+
+Contact number.
+
+Billing address.
+
+Optional tax ID.
+
+Status.
+
+Registration date.
+
+Assigned staff member.
+
+Outstanding balance.
+
+Features:
+
+Add customer.
+
+Edit customer.
+
+View profile.
+
+Search.
+
+Filter.
+
+Sort.
+
+Pagination.
+
+View subscriptions.
+
+View quotations.
+
+View invoices.
+
+View payments.
+
+View activity history.
+
+Customer profile tabs:
+
+Overview.
+
+Subscriptions.
+
+Quotations.
+
+Invoices.
+
+Payments.
+
+Activity.
+
+Show financial summaries, subscription history and recent activities.
+
+7. QUOTATION MANAGEMENT
+
+Build a professional quotation management system.
+
+Quotation templates
+
+Allow reusable templates containing:
+
+Template name.
+
+Description.
+
+Default plan.
+
+Products.
+
+Variants.
+
+Quantities.
+
+Prices.
+
+Taxes.
+
+Discounts.
+
+Payment terms.
+
+Validity days.
+
+Selecting a template must prefill a quotation and calculate its expiry date.
+
+Quotation creation
+
+Fields:
+
+Customer.
+
+Template.
+
+Product.
+
+Variant.
+
+Plan.
+
+Quantity.
+
+Unit price.
+
+Tax.
+
+Discount.
+
+Payment terms.
+
+Validity.
+
+Notes.
+
+Automatically calculate:
+
+Subtotal.
+
+Discount.
+
+Tax.
+
+Final payable amount.
+
+Generate unique quotation references.
+
+Features:
+
+Create.
+
+Edit draft.
+
+Preview.
+
+Send.
+
+Confirm.
+
+Convert to subscription.
+
+Extend validity with authorization.
+
+Track expiry.
+
+Print.
+
+Download PDF.
+
+View history.
+
+Expired quotations cannot be confirmed without an authorized extension.
+
+8. SUBSCRIPTION LIFECYCLE MANAGEMENT
+
+Every subscription must have:
+
+Unique subscription number.
+
+Customer.
+
+Plan.
+
+Start date.
+
+Expiry date.
+
+Payment terms.
+
+Billing frequency.
+
+Product lines.
+
+Variants.
+
+Quantity.
+
+Unit price.
+
+Taxes.
+
+Discounts.
+
+Subtotal.
+
+Final amount.
+
+Next billing date.
+
+Renewal configuration.
+
+Status.
+
+Timestamps.
+
+Example subscription reference: SUB-2026-00042.
+
+Lifecycle
+
+Draft → Quotation → Confirmed → Active → Closed.
+
+Paused is a separate state reachable from Active only when the plan permits it.
+
+Paused subscriptions must not generate charges during the paused period. Closed subscriptions must never generate future invoices.
+
+Features
+
+Create subscriptions.
+
+Edit permitted fields.
+
+Confirm.
+
+Activate.
+
+Pause.
+
+Resume.
+
+Renew.
+
+Close.
+
+View subscription history.
+
+Calculate next billing dates.
+
+Identify upcoming renewals.
+
+Generate billing events.
+
+Automatically close eligible subscriptions.
+
+Send renewal reminders.
+
+Prevent duplicate billing.
+
+Maintain status history.
+
+Enforce valid state transitions in the backend.
+
+Journey Track
+
+Create a visual subscription journey:
+
+Draft → Quotation → Confirmed → Active → Closed.
+
+Display:
+
+Current status.
+
+Completed stages.
+
+Dates and timestamps.
+
+Responsible staff member.
+
+Next permitted action.
+
+Show one primary next action at a time.
+
+Proration
+
+Support mid-cycle plan upgrades, downgrades and quantity changes.
+
+Show the calculation transparently and add an auditable prorated adjustment line.
+
+Require confirmation before high-impact changes.
+
+9. FINANCIAL ENGINE — NON-NEGOTIABLE
+
+Financial accuracy is more important than visual effects.
+
+Currency
+
+Default currency: INR (₹).
+
+Use Indian number grouping, such as ₹18,40,000.
+
+Store all monetary values as integer minor units (paise).
+
+Never use JavaScript floating-point numbers for financial storage or calculations.
+
+Use a central pricing, discount and tax service.
+
+Frontend components must display server-calculated financial totals rather than independently calculating authoritative totals.
+
+Calculation order
+
+Document and implement this order consistently:
+
+Base unit price + variant extra.
+
+Multiply by quantity.
+
+Apply eligible discount.
+
+Apply tax.
+
+Calculate line totals.
+
+Aggregate invoice totals.
+
+Calculate paid and outstanding balances.
+
+For tax-exclusive prices, add tax.
+
+For tax-inclusive prices, extract the included tax.
+
+Cap discounts so no line or invoice can become negative.
+
+Use explicit, consistent rounding rules.
+
+Immutable financial snapshots
+
+Confirmed invoices must retain snapshots of:
+
+Product name.
+
+Variant.
+
+Unit price.
+
+Quantity.
+
+Discount.
+
+Tax.
+
+Final amount.
+
+Later product, plan, discount or tax changes must not rewrite historical financial records.
+
+10. AUTOMATED BILLING ENGINE
+
+Create a reliable recurring billing engine.
+
+Invoices must be generated from active subscriptions when their billing dates become due.
+
+Never require staff to recreate subscription lines manually.
+
+Billing process
+
+For every eligible subscription:
+
+Check subscription status.
+
+Check plan eligibility.
+
+Check billing period.
+
+Check whether an invoice already exists.
+
+Snapshot subscription lines.
+
+Calculate pricing.
+
+Apply eligible discounts.
+
+Calculate taxes.
+
+Create invoice transactionally.
+
+Advance next billing date only after successful creation.
+
+Record the outcome in the billing log.
+
+Support daily, weekly, monthly and yearly billing, including month-end dates and leap years.
+
+Never Twice, Never Missed
+
+Create a dedicated billing operations experience.
+
+Before execution, show a dry-run preview:
+
+"312 invoices will be created. 0 duplicates. 4 subscriptions skipped because they are paused."
+
+Display reasons for skipped subscriptions.
+
+After execution, show:
+
+Created.
+
+Skipped.
+
+Failed.
+
+Duplicate prevention results.
+
+Execution duration.
+
+Run reference.
+
+Billing reliability
+
+Enforce a unique database constraint on (subscriptionId, billingPeriod).
+
+Use transactions and idempotency keys.
+
+Repeated billing runs and retries must not create duplicate invoices.
+
+Implement:
+
+Billing run history.
+
+Manual billing execution.
+
+Scheduled execution when configured.
+
+Scheduler settings.
+
+Timezone configuration.
+
+Pause-all-billing safety switch.
+
+Failed-item retry.
+
+Individual and bulk retry.
+
+Failure details.
+
+Catch-up wizard for missed billing periods.
+
+Authorized voiding of a run.
+
+Voiding a run may cancel only Draft invoices created by that run. Confirmed and Paid invoices must be protected.
+
+If a scheduler is unavailable, provide a clearly labelled manual billing action that invokes the same billing service.
+
+Never claim an unconfigured scheduler is running.
+
+11. INVOICE MANAGEMENT
+
+Invoice fields:
+
+Invoice number.
+
+Customer.
+
+Subscription reference.
+
+Billing period.
+
+Issue date.
+
+Due date.
+
+Product lines.
+
+Quantity.
+
+Unit price.
+
+Discount.
+
+Tax breakdown.
+
+Subtotal.
+
+Total.
+
+Amount paid.
+
+Outstanding balance.
+
+Payment terms.
+
+Notes.
+
+Status.
+
+Example: INV-2026-000123.
+
+Lifecycle:
+
+Draft.
+
+Confirmed.
+
+Paid.
+
+Cancelled is a separate audited action.
+
+Overdue is derived when the due date has passed and the invoice is not fully paid.
+
+Features:
+
+Automatic invoice generation.
+
+Confirm.
+
+Cancel with reason.
+
+Send through configured email provider.
+
+Print.
+
+Download PDF.
+
+View invoice details.
+
+Search and filter.
+
+Bulk confirm/send with progress.
+
+Outstanding balance tracking.
+
+Overdue detection.
+
+Payment timeline.
+
+Create a professional printable invoice template with Indian Rupee formatting and Brightloop branding.
+
+Support credit notes and partial/full refunds with auditable links to original invoices and payment records.
+
+12. TAX MANAGEMENT
+
+Only administrators can manage tax rules.
+
+Tax fields:
+
+Name.
+
+Percentage or supported fixed amount.
+
+Applicability.
+
+Inclusive or exclusive setting.
+
+Effective dates.
+
+Status.
+
+Support product-specific, product-type and global applicability.
+
+Features:
+
+Automatic quotation tax.
+
+Automatic invoice tax.
+
+Individual tax breakdown.
+
+CGST/SGST/GST demonstration configuration.
+
+Tax versioning.
+
+Effective dates.
+
+Historical snapshots.
+
+Duplicate-application prevention.
+
+Restore through a new version.
+
+Clearly label demonstration tax configuration as sample configuration, not legal tax advice.
+
+13. DISCOUNT MANAGEMENT
+
+Only administrators can create or modify discount rules.
+
+Support:
+
+Fixed discounts.
+
+Percentage discounts.
+
+Fields:
+
+Discount name.
+
+Discount code.
+
+Discount type.
+
+Discount value.
+
+Minimum purchase amount.
+
+Minimum quantity.
+
+Start date.
+
+End date.
+
+Usage limit.
+
+Times used.
+
+Applicable products.
+
+Applicable subscriptions.
+
+Status.
+
+Automatically validate eligibility and usage limits.
+
+Apply eligible discounts to the next invoice.
+
+Support:
+
+Transactional usage tracking.
+
+Expiry.
+
+Exhaustion.
+
+Best eligible discount selection.
+
+Fixed discount allocation across eligible lines.
+
+Prevention of double application.
+
+No negative totals.
+
+Discount history.
+
+Live discount preview.
+
+Display status as Scheduled, Active, Expired or Exhausted.
+
+14. PAYMENT MANAGEMENT AND RECONCILIATION
+
+Payment fields:
+
+Unique payment ID.
+
+Customer.
+
+Invoice.
+
+Payment method.
+
+Amount.
+
+Payment date.
+
+Transaction reference.
+
+Notes.
+
+Recorder.
+
+Status.
+
+Methods:
+
+UPI.
+
+Card.
+
+Bank transfer.
+
+Cash.
+
+Cheque.
+
+Other.
+
+Features:
+
+Record payments.
+
+Link to invoices.
+
+Support multiple payments per invoice.
+
+Support partial payments.
+
+Display remaining balance.
+
+Prevent duplicate transactions.
+
+Prevent overpayment or record it as an explicitly labelled unapplied credit.
+
+Record corrections and reversals.
+
+Maintain payment history.
+
+Search and filter.
+
+When successful allocations equal the invoice total, mark it Paid.
+
+When allocations are partial, mark it Partially Paid.
+
+Never mark an invoice Paid merely because a payment was attempted.
+
+Payment gateway
+
+Use a modular provider interface.
+
+If credentials are unavailable, use a clearly labelled simulated payment gateway with success and failure scenarios.
+
+Never claim a simulated payment is real.
+
+Gentle Chase
+
+Create a friendly overdue collection board.
+
+Group invoices into:
+
+1–7 days overdue.
+
+8–30 days overdue.
+
+30+ days overdue.
+
+Generate empathetic reminder drafts.
+
+Use calm language such as "This payment may have slipped through" rather than blaming the customer.
+
+Dunning center
+
+Support configurable reminder schedules:
+
+Before due date.
+
+On due date.
+
+3 days overdue.
+
+10 days overdue.
+
+30 days overdue.
+
+Allow template variables such as:
+{{customer}}, {{amount}}, {{due_date}}, {{invoice_link}}.
+
+Maintain delivery history.
+
+Automatically stop reminders once payment is recorded.
+
+Prevent duplicate reminder execution.
+
+Never charge a customer repeatedly without valid payment authorization.
+
+Bank reconciliation
+
+Support CSV bank-statement uploads.
+
+Match transactions using:
+
+Amount.
+
+Reference.
+
+Date.
+
+Show match confidence and classify:
+
+Matched.
+
+Needs review.
+
+Unmatched.
+
+Support manual linking, split allocations, duplicate detection and approval.
+
+Imported bank rows must remain separate from confirmed payment allocations until approved.
+
+Provide a sample bank statement CSV.
+
+15. FINANCE DASHBOARD — REVENUE PULSE
+
+Create a premium financial command center.
+
+Revenue Pulse
+
+This is the signature Brightloop Pulse feature.
+
+Combine four indicators:
+
+Revenue movement.
+
+Payment collection.
+
+Outstanding invoices.
+
+Upcoming renewals.
+
+Show a sentence-driven financial summary, for example:
+
+"You have 1,284 active subscriptions earning ₹18.4L a month. ₹2.1L is still owed, and ₹46K is overdue."
+
+The example is illustrative only. Production figures must come from actual database records.
+
+Make every KPI clickable and drill into the relevant filtered records.
+
+KPI cards
+
+MRR.
+
+ARR.
+
+Active subscriptions.
+
+Total customers.
+
+Collected revenue.
+
+Outstanding receivables.
+
+Overdue invoices.
+
+Renewal rate.
+
+Upcoming renewals.
+
+Show:
+
+Current value.
+
+Previous-period comparison.
+
+Percentage change.
+
+Reporting period.
+
+Define MRR and ARR normalization once and reuse it consistently.
+
+Analytics
+
+Monthly revenue trend.
+
+MRR movement.
+
+Revenue breakdown.
+
+Subscription growth.
+
+Payment methods.
+
+Payment status.
+
+Monthly comparison.
+
+Plan distribution.
+
+Upcoming renewals.
+
+Customer growth.
+
+Invoice aging.
+
+Use Recharts or an equivalent lightweight chart library.
+
+Provide:
+
+Interactive tooltips.
+
+Date filters.
+
+Chart summaries.
+
+Responsive layouts.
+
+Empty states.
+
+Drill-down navigation.
+
+Activity feed
+
+Show registrations, subscriptions, renewals, invoices, payments, failures, cancellations and discount usage.
+
+Needs Your Attention
+
+Highlight:
+
+Overdue invoices.
+
+Failed payments.
+
+Upcoming renewals.
+
+Expiring subscriptions.
+
+Expiring discounts.
+
+Failed billing jobs.
+
+Unmatched payments.
+
+Pending approvals.
+
+Data-health warnings.
+
+Each item must provide a reason and a relevant action.
+
+All financial figures must be derived from persisted records.
+
+Clearly separate invoiced revenue, collected cash, recognized revenue, outstanding receivables and projected collections.
+
+16. CUSTOMER SELF-SERVICE PORTAL
+
+Build a separate customer-facing portal that is excellent on mobile.
+
+Welcome message:
+
+"Your subscriptions, made simple."
+
+Customer home
+
+Display:
+
+Greeting.
+
+Active subscriptions.
+
+Upcoming payment.
+
+Next billing date.
+
+Outstanding invoices.
+
+Recent transactions.
+
+Next Bill, Explained
+
+Create a clear card explaining:
+
+Subscription plan.
+
+Add-ons.
+
+Quantity.
+
+Discount.
+
+Tax.
+
+Final amount.
+
+Billing date.
+
+Example wording:
+
+"Your next bill is ₹X on 5 December. Here's how it is calculated."
+
+Include a lightweight six-month forward cost forecast, clearly labelled as an estimate.
+
+Subscriptions
+
+Allow customers to:
+
+View subscriptions.
+
+View plan details.
+
+View frequency.
+
+View renewal dates.
+
+View billing history.
+
+Pause/resume/renew/close where permitted.
+
+Always display the consequences and effective dates before confirmation.
+
+Invoices
+
+View invoices.
+
+View due dates.
+
+Download PDFs.
+
+View payment status.
+
+View invoice details.
+
+View payment history.
+
+Profile
+
+Update contact details.
+
+Update billing details.
+
+Change password.
+
+Manage notification preferences.
+
+Use simple, respectful language.
+
+Never use dark patterns or hidden fees.
+
+Enforce customer data isolation at the backend.
+
+17. ADVANCED ADMIN INTELLIGENCE CENTER
+
+Build a dedicated business intelligence and control workspace.
+
+Every feature must use authorized persisted data and integrate with existing modules.
+
+A. AI Business Intelligence Assistant
+
+Admin-only assistant capable of:
+
+Natural-language business questions.
+
+Daily, weekly and monthly summaries.
+
+Revenue explanations.
+
+Overdue summaries.
+
+Customer and product performance insights.
+
+Unusual financial activity detection.
+
+Operational recommendations.
+
+Example:
+
+How much revenue did we collect this month?
+
+Which customers have overdue invoices?
+
+Which plan generates the highest revenue?
+
+How many subscriptions renew next month?
+
+Why did recurring revenue decrease?
+
+Use verified database information. Never invent figures.
+
+Gemini integration must be optional, server-side and configured through environment variables. The application must remain fully functional when AI is disabled.
+
+Clearly label unavailable AI features.
+
+B. Revenue Forecasting
+
+Provide:
+
+3-month forecast.
+
+6-month forecast.
+
+12-month forecast.
+
+Expected recurring collections.
+
+Conservative scenario.
+
+Realistic scenario.
+
+Optimistic scenario.
+
+Show actual and forecast data separately.
+
+Display assumptions and limitations.
+
+C. Churn and Retention Intelligence
+
+Analyze:
+
+Failed payments.
+
+Renewal history.
+
+Cancellation history.
+
+Inactivity.
+
+Outstanding balances.
+
+Engagement where available.
+
+Assign Low, Medium and High risk.
+
+Provide explainable reasons and recommended follow-ups.
+
+Do not automatically cancel subscriptions or apply discounts.
+
+D. Revenue Leakage and Billing Audit
+
+Detect:
+
+Active subscriptions without expected invoices.
+
+Duplicate invoices.
+
+Missing billing cycles.
+
+Incorrect invoice totals.
+
+Unapplied eligible discounts.
+
+Tax discrepancies.
+
+Unlinked payments.
+
+Unexpected price changes.
+
+Display severity, affected records, financial impact, evidence, recommended resolution and status.
+
+E. Cash Flow Intelligence
+
+Display:
+
+Actual collected cash.
+
+Expected collections.
+
+Outstanding receivables.
+
+Overdue receivables.
+
+Upcoming collections.
+
+Collection trends.
+
+Estimated collection gaps.
+
+Separate actual values from forecasts.
+
+F. Staff Performance and Task Management
+
+Support:
+
+Staff assignment.
+
+Customer assignment.
+
+Task creation.
+
+Priorities.
+
+Deadlines.
+
+Comments.
+
+Activity history.
+
+Quotation follow-ups.
+
+Invoice follow-ups.
+
+Overdue tasks.
+
+Individual and team reports.
+
+Task lifecycle:
+Pending → In Progress → Completed.
+
+Use transparent metrics rather than arbitrary productivity scores.
+
+G. Approval Workflow
+
+Create configurable approvals for:
+
+High-value discounts.
+
+Large refunds.
+
+Invoice cancellation.
+
+Exceptional subscription pricing.
+
+Manual financial adjustments.
+
+Payment reversals.
+
+High-value quotations.
+
+Closing subscriptions with unpaid invoices.
+
+Provide:
+
+Approval request.
+
+Approver assignment.
+
+Pending inbox.
+
+Impact preview.
+
+Approve/reject.
+
+Mandatory rejection reason.
+
+Approval history.
+
+Requester notification.
+
+Enforce approvals on the backend.
+
+H. Customer Segmentation
+
+Segment customers by:
+
+Revenue.
+
+Subscription value.
+
+Billing frequency.
+
+Subscription status.
+
+Renewal history.
+
+Payment reliability.
+
+Registration date.
+
+Usage or engagement where available.
+
+Support saved segments and authorized communication campaigns.
+
+I. Billing Simulation and What-if Analysis
+
+Preview:
+
+Upcoming invoices.
+
+Plan price changes.
+
+Discount changes.
+
+Tax changes.
+
+Customer cancellations.
+
+Future revenue.
+
+Profitability impact.
+
+Use a sandbox.
+
+Simulation must never create live invoices, charge customers or modify live records.
+
+Support saved scenarios and Before/After comparison.
+
+J. Custom Admin Dashboard
+
+Allow administrators to:
+
+Add/remove widgets.
+
+Reorder widgets.
+
+Save layouts.
+
+Select default date ranges.
+
+Configure KPI views.
+
+Save filters.
+
+Persist dashboard preferences.
+
+K. Bulk Operations and Data Portability
+
+Support:
+
+CSV customer import.
+
+Product import where appropriate.
+
+Subscription import where safe.
+
+CSV/JSON export.
+
+Bulk subscription updates.
+
+Bulk invoice exports.
+
+Bulk notifications.
+
+Duplicate detection.
+
+Row-level validation.
+
+Import preview.
+
+Error reports.
+
+Import history.
+
+Rollback where safe.
+
+Require impact previews and confirmations for destructive actions.
+
+L. Multi-company and Branch Management
+
+Optional advanced capability.
+
+Support:
+
+Multiple business entities.
+
+Branch management.
+
+Staff assignment.
+
+Entity-specific subscriptions.
+
+Entity-specific invoices.
+
+Company-specific reporting.
+
+Performance comparisons.
+
+Enforce strict tenant and company data isolation.
+
+M. Advanced Audit and Security Center
+
+Record:
+
+Login activity.
+
+Failed login attempts.
+
+Password changes.
+
+Role and permission changes.
+
+Financial modifications.
+
+Discount changes.
+
+Invoice cancellations.
+
+Payment adjustments.
+
+Exports.
+
+Settings changes.
+
+Maintain immutable logs containing:
+
+Actor.
+
+Timestamp.
+
+Affected record.
+
+Action.
+
+Before/after values where appropriate.
+
+Request/correlation ID.
+
+Result.
+
+Do not log secrets or unnecessary sensitive personal data.
+
+Provide search, filters and authorized exports.
+
+N. System Health and Automation Monitor
+
+Monitor:
+
+Billing jobs.
+
+Renewal jobs.
+
+Notification delivery.
+
+Background task failures.
+
+Retries.
+
+API errors.
+
+Gateway connectivity.
+
+Database connectivity.
+
+Scheduler history.
+
+Provide alerts, error details and authorized retry actions.
+
+Never silently ignore failed jobs.
+
+O. Automation Studio
+
+Provide a modular workflow builder:
+
+Trigger → Conditions → Actions → Execution History.
+
+Supported actions:
+
+In-app notification.
+
+Configured or simulated email.
+
+Follow-up task.
+
+Admin alert.
+
+Approval request.
+
+Include enable/disable, retries, duplicate-trigger protection, permission checks and audit history.
+
+18. SMART BILLING CALENDAR
+
+Create an interactive billing calendar.
+
+Display:
+
+Invoice generation dates.
+
+Subscription renewals.
+
+Invoice due dates.
+
+Overdue invoices.
+
+Payment reminders.
+
+Subscription expiries.
+
+Views:
+
+Monthly.
+
+Weekly.
+
+Agenda.
+
+Allow filtering by event type.
+
+Clicking an event must open the related record.
+
+19. STAFF MONTH RIBBON
+
+Create a horizontal billing calendar ribbon on the staff home page.
+
+Display the days of the current month.
+
+Show a small visual bar for each day's invoice workload.
+
+Scale the bar according to the number of invoices due.
+
+Highlight today.
+
+Clicking a day filters the relevant billing tasks.
+
+Provide accessible labels and a mobile-friendly alternative.
+
+Use subtle animation only when updating the ribbon.
+
+20. GLOBAL SEARCH AND NAVIGATION
+
+Implement global search across:
+
+Customers.
+
+Emails.
+
+Subscription numbers.
+
+Invoice numbers.
+
+Products.
+
+Payments.
+
+Quotation references.
+
+Provide:
+
+Debounced search.
+
+Advanced filters.
+
+Sorting.
+
+Pagination.
+
+Saved filters.
+
+Clear-filter action.
+
+Empty states.
+
+Command palette
+
+Support Ctrl/Cmd + K.
+
+Allow authorized users to find records and actions such as:
+
+Open customer.
+
+Open subscription.
+
+Open invoice.
+
+Create quotation.
+
+Run billing.
+
+Open approvals.
+
+Show only actions the current user is authorized to perform.
+
+21. DESIGN SYSTEM — PREMIUM FINTECH SAAS
+
+The interface must feel like a premium, modern, professional financial SaaS product.
+
+It must be visually attractive, distinctive, clean, trustworthy and easy to understand.
+
+Visual direction
+
+Use a light-first, warm-modern fintech aesthetic.
+
+Suggested palette:
+
+Warm off-white canvas: #FAF8F5.
+
+Midnight navy: #101828.
+
+Deep indigo primary: #3B3FD8.
+
+Emerald/teal: #18B981.
+
+Blue accent: #6385F5.
+
+Amber: warning.
+
+Muted coral: overdue/danger.
+
+Dark slate: primary text.
+
+Soft neutral gray: borders and secondary text.
+
+Use design tokens so colors can be changed consistently.
+
+Typography
+
+Preferred:
+
+Inter.
+
+Manrope.
+
+Plus Jakarta Sans.
+
+Optional display font:
+
+Sora or Fraunces for selected headlines only.
+
+Use tabular numerals for financial figures.
+
+Layout
+
+Desktop:
+
+Collapsible sidebar.
+
+Structured top navigation.
+
+Global search.
+
+Breadcrumbs.
+
+Notification center.
+
+Profile menu.
+
+Main content workspace.
+
+Mobile:
+
+Responsive navigation.
+
+Compact dashboard cards.
+
+Responsive lists or intentional horizontal table scrolling.
+
+Mobile-friendly customer portal.
+
+Touch-friendly controls.
+
+Use:
+
+Consistent spacing.
+
+10–16px rounded corners.
+
+Subtle shadows.
+
+Clear visual hierarchy.
+
+Compact readable tables.
+
+Professional status chips.
+
+Elegant charts.
+
+Lucide icons.
+
+Clear forms.
+
+Contextual empty states.
+
+Skeleton loaders.
+
+Helpful error messages.
+
+Avoid:
+
+Generic dashboard templates.
+
+Excessive gradients.
+
+Neon colors.
+
+Excessive glassmorphism.
+
+Overcrowded cards.
+
+Oversized empty spaces.
+
+Emoji as primary icons.
+
+Decorative elements without purpose.
+
+Too many competing primary actions.
+
+Navigation
+
+Admin and Staff navigation should include the permitted modules:
+
+Home, Customers, Products, Plans, Templates, Subscriptions, Billing Console, Invoices, Payments, Reconciliation, Renewals & Collections, Discounts, Taxes, Approvals, Reports & Intelligence, Simulator, Health Monitor, Audit, Team & Roles, Settings.
+
+Admin-only or permission-restricted modules must be hidden or disabled appropriately.
+
+Customer portal navigation:
+
+Home, Subscriptions, Invoices, Profile.
+
+Every navigation item must lead to a working page.
+
+22. MOTION GRAPHICS AND MICRO-INTERACTION SYSTEM
+
+This is a mandatory design requirement.
+
+Make Brightloop Pulse feel alive, modern and premium through small, tasteful motion graphics.
+
+Motion must improve feedback, hierarchy and user experience. It must never distract from financial information or reduce application performance.
+
+The result should feel smooth, elegant and professional — not like an animated gaming website.
+
+A. Motion design principles
+
+Use:
+
+Subtle.
+
+Smooth.
+
+Fast.
+
+Purposeful.
+
+Consistent.
+
+Lightweight.
+
+Performance-friendly animation.
+
+Target a smooth 60 FPS experience on supported devices under normal workload.
+
+Prefer GPU-friendly CSS transitions using transform and opacity.
+
+Avoid unnecessary layout recalculation, large animated shadows, expensive blur filters, continuous animation loops and excessive DOM updates.
+
+B. Page transitions
+
+Add subtle transitions when navigating between major pages:
+
+Short fade-in.
+
+Small vertical movement.
+
+Smooth content appearance.
+
+Consistent transition timing.
+
+Do not animate entire large tables or dashboards unnecessarily.
+
+Use transitions that finish quickly, generally around 150–250ms.
+
+C. Dashboard motion
+
+Add tasteful interactions to:
+
+KPI cards.
+
+Revenue Pulse.
+
+Charts.
+
+Progress indicators.
+
+Activity feed.
+
+Notification badges.
+
+Billing calendar.
+
+Attention queue.
+
+Examples:
+
+KPI values gently count up when first loaded.
+
+Charts draw in subtly on first appearance.
+
+Revenue Pulse indicators animate once when the reporting period changes.
+
+Progress bars fill smoothly.
+
+Status changes use a small fade or scale transition.
+
+Notification badges use a brief appearance animation.
+
+Do not continuously animate financial numbers.
+
+D. Hover and click interactions
+
+Use subtle feedback for:
+
+Buttons.
+
+Cards.
+
+Sidebar links.
+
+Navigation items.
+
+Table rows.
+
+Dropdowns.
+
+Tabs.
+
+Filters.
+
+Status chips.
+
+Examples:
+
+Buttons gently darken or lift by 1–2px.
+
+Cards receive a very subtle shadow or border change.
+
+Icons move or fade slightly when appropriate.
+
+Dropdowns open with a short opacity and scale transition.
+
+Tooltips appear smoothly.
+
+Active navigation indicators transition between items.
+
+Avoid exaggerated bouncing, spinning or scaling.
+
+E. Revenue Pulse animation
+
+Create a refined visual treatment:
+
+A small animated pulse indicator.
+
+A smooth progress or trend indicator.
+
+Subtle line-chart reveal.
+
+Gentle transition when changing date ranges.
+
+Clearly visible actual-versus-forecast distinction.
+
+Use one-time or event-triggered animations rather than permanent motion.
+
+F. Billing and subscription motion
+
+Include:
+
+Smooth Journey Track stage transitions.
+
+Animated progress indicators during billing runs.
+
+Small success confirmation animations.
+
+Clear failed-state feedback.
+
+Smooth calendar day selection.
+
+Gentle progress updates.
+
+Animated payment status changes after backend confirmation.
+
+Never show a successful animation before the backend confirms success.
+
+G. Loading states
+
+Use lightweight skeleton loaders for:
+
+Dashboard cards.
+
+Tables.
+
+Charts.
+
+Customer profiles.
+
+Invoice details.
+
+Use small spinners only for short operations.
+
+For longer billing operations, show:
+
+Progress.
+
+Completed count.
+
+Failed count.
+
+Current stage.
+
+Clear cancellation or retry behavior where supported.
+
+Avoid blocking the entire application for localized loading.
+
+H. Motion technology
+
+Prefer:
+
+CSS transitions.
+
+CSS keyframes for simple effects.
+
+Lightweight React animation patterns.
+
+Framer Motion only where it materially improves the experience and does not add unnecessary bundle weight.
+
+Do not introduce heavy animation libraries for simple transitions.
+
+Do not use large Lottie files, unnecessary video backgrounds, WebGL scenes or continuously running canvas animations.
+
+If SVG animation is used, keep it simple and lightweight.
+
+I. Performance safeguards
+
+Motion must not:
+
+Delay page rendering.
+
+Block user interactions.
+
+Increase dashboard loading time.
+
+Cause unnecessary React re-renders.
+
+Animate thousands of table rows.
+
+Continue running on hidden or off-screen content without a reason.
+
+Consume excessive CPU or memory.
+
+Interfere with chart interaction.
+
+Affect financial calculations or background jobs.
+
+Use lazy loading for non-essential visual assets.
+
+Use animation only when relevant content enters the viewport.
+
+Respect the user's prefers-reduced-motion setting. Provide reduced-motion alternatives.
+
+On lower-powered devices, simplify or disable non-essential effects.
+
+Keep the core platform fully usable when animations are disabled.
+
+Final motion direction: Every interaction should feel intentional and responsive. The platform should look premium and smooth without looking over-animated.
+
+23. ACCESSIBILITY AND RESPONSIVE DESIGN
+
+Support:
+
+WCAG AA contrast.
+
+Keyboard navigation.
+
+Visible focus indicators.
+
+Semantic HTML.
+
+Accessible labels.
+
+Screen-reader-friendly validation.
+
+Accessible chart summaries.
+
+Reduced motion.
+
+Touch-friendly controls.
+
+Light and dark themes.
+
+Test:
+
+Desktop.
+
+Tablet.
+
+Mobile.
+
+The customer portal must be especially polished on mobile.
+
+24. DATABASE AND ARCHITECTURE
+
+Use a modular architecture.
+
+Preferred frontend
+
+React.
+
+TypeScript.
+
+Vite where supported.
+
+Tailwind CSS.
+
+React Router.
+
+Recharts.
+
+Lucide React.
+
+Zod.
+
+Reusable accessible components.
+
+Preferred backend
+
+Use the backend runtime supported by Google AI Studio Build mode.
+
+Preferred options:
+
+Node.js/Express or an equivalent supported server runtime.
+
+REST API.
+
+Server-side authentication and authorization.
+
+Shared business services.
+
+Repository/data-access layer.
+
+Python FastAPI is acceptable when the runtime supports it.
+
+Do not force an unsupported architecture. Select the closest reliable architecture and document the decision.
+
+Database
+
+Preferred:
+
+PostgreSQL.
+
+SQLAlchemy/Alembic when using Python.
+
+Appropriate migrations.
+
+Foreign keys.
+
+Unique constraints.
+
+Indexes.
+
+Transactions.
+
+Use a supported managed database where necessary.
+
+If a client-only environment is unavoidable, use IndexedDB behind the same repository/service interfaces and explicitly document that it is a demonstration without true server-side security. Do not claim production-grade backend authorization in a client-only implementation.
+
+Required entities
+
+At minimum:
+
+Users.
+
+User Profiles.
+
+Roles.
+
+Permissions.
+
+Role Assignments.
+
+Customers.
+
+Staff Profiles.
+
+Business Entities.
+
+Products.
+
+Variants.
+
+Plans.
+
+Plan Versions.
+
+Plan Configurations.
+
+Quotation Templates.
+
+Quotation Template Lines.
+
+Quotations.
+
+Quotation Lines.
+
+Subscriptions.
+
+Subscription Lines.
+
+Subscription Events.
+
+Billing Runs.
+
+Billing Periods.
+
+Invoices.
+
+Invoice Lines.
+
+Invoice Tax Details.
+
+Credit Notes.
+
+Tax Rules.
+
+Tax Versions.
+
+Discount Rules.
+
+Discount Applications.
+
+Discount Usage.
+
+Payments.
+
+Payment Allocations.
+
+Payment Reversals.
+
+Bank Statement Rows.
+
+Reconciliation Suggestions.
+
+Approval Requests.
+
+Approval History.
+
+Dunning Steps.
+
+Message Logs.
+
+Notifications.
+
+Notification Deliveries.
+
+Audit Logs.
+
+Security Events.
+
+Health Issues.
+
+Anomaly Alerts.
+
+Import Batches.
+
+Password Reset Tokens.
+
+Sessions.
+
+Tasks.
+
+Customer Segments.
+
+Business Goals.
+
+Forecast Scenarios.
+
+Pricing Simulations.
+
+Automation Rules.
+
+Automation Executions.
+
+Dashboard Preferences.
+
+Settings.
+
+Use:
+
+Primary keys.
+
+Foreign keys.
+
+Unique business identifiers.
+
+Unique invoice number sequences.
+
+Indexes.
+
+Timestamps.
+
+Transactional financial operations.
+
+Database migrations.
+
+Historical snapshots.
+
+Never silently remove financial history.
+
+Archive or soft-delete records referenced by financial records.
+
+25. PERFORMANCE REQUIREMENTS
+
+Support thousands of customers, subscriptions and invoices.
+
+Target:
+
+Under 2 seconds for common dashboard and listing operations under the expected workload.
+
+Smooth scrolling.
+
+Responsive navigation.
+
+Fast filtering.
+
+Efficient charts.
+
+Smooth interactions.
+
+Use:
+
+Server-side pagination.
+
+Indexed queries.
+
+Optimized SQL.
+
+Aggregated analytics.
+
+Memoization where appropriate.
+
+Debounced search.
+
+Lazy-loaded routes.
+
+Virtualized tables for large datasets.
+
+Efficient React rendering.
+
+Cached summaries where safe.
+
+Code splitting.
+
+Optimized images and icons.
+
+Never load the entire database into the browser.
+
+Include a development-only performance indicator showing actual measured load time. Never display invented performance measurements.
+
+Test with at least 5,000 subscriptions and 12,000 invoices.
+
+Motion graphics must remain lightweight and must not compromise these targets.
+
+26. DEMO DATA AND SEEDING
+
+Create a deterministic, repeatable seed script.
+
+Core demo dataset
+
+Include:
+
+At least 12 products.
+
+At least 8 subscription plans.
+
+Multiple variants.
+
+Daily, weekly, monthly and yearly plans.
+
+At least 40 customers.
+
+Draft and confirmed quotations.
+
+Active, paused and closed subscriptions.
+
+Draft, confirmed, paid, partially paid, overdue and cancelled invoices.
+
+Successful payments.
+
+Partial payments.
+
+Credit notes.
+
+Discounts.
+
+Tax rules.
+
+Renewals.
+
+Notifications.
+
+Audit entries.
+
+Business intelligence insights.
+
+Use fictional demo customers and realistic Indian Rupee transactions.
+
+All demo figures must reconcile.
+
+Performance dataset
+
+Provide an optional performance seed:
+
+Approximately 300 customers.
+
+Approximately 5,000 subscriptions.
+
+Approximately 12,000 invoices.
+
+Matching payments and allocations.
+
+Include deliberately seeded data-quality issues for the watchdog, such as:
+
+Active subscription without next billing date.
+
+Possible duplicate invoice.
+
+Unmatched payment reference.
+
+Label all demo data clearly.
+
+Provide a sample bank statement CSV matching seeded invoices.
+
+27. NOTIFICATIONS AND AUTOMATION
+
+Support:
+
+Upcoming renewal notifications.
+
+Invoice generated.
+
+Invoice due.
+
+Invoice overdue.
+
+Payment success.
+
+Payment failure.
+
+Subscription activated.
+
+Subscription paused.
+
+Subscription closed.
+
+Discount expiring.
+
+Approval requested.
+
+Approval completed.
+
+Billing job failed.
+
+Provide:
+
+In-app notifications.
+
+Read/unread state.
+
+Notification history.
+
+Configured email delivery.
+
+Scheduled reminders.
+
+Delivery tracking.
+
+Retry handling.
+
+Failure logs.
+
+Use a scheduler or job queue where supported.
+
+Clearly label manual execution and development fallbacks.
+
+28. SETTINGS AND COMPANY CONFIGURATION
+
+Allow administrators to manage:
+
+Company legal name.
+
+Address.
+
+Tax ID.
+
+Logo.
+
+Currency.
+
+Number formatting.
+
+Invoice prefixes.
+
+Subscription prefixes.
+
+Number sequences.
+
+Fiscal year start.
+
+Default payment terms.
+
+Invoice branding.
+
+Notification preferences.
+
+Customer self-pause setting.
+
+Partial payment setting.
+
+Integration status.
+
+Feature toggles.
+
+Provide a mock API key/webhook management interface only if it is clearly labelled as a configuration or demonstration interface.
+
+Never expose secret credentials to the frontend.
+
+29. TESTING AND VALIDATION
+
+Write and run automated tests for critical business logic.
+
+Authentication
+
+Unique email.
+
+Password rules.
+
+Login.
+
+Password reset.
+
+Session handling.
+
+Authorization
+
+Admin access.
+
+Staff restrictions.
+
+Customer isolation.
+
+Staff creation restrictions.
+
+Discount permissions.
+
+Tax permissions.
+
+Custom roles.
+
+Products and plans
+
+Variant pricing.
+
+Plan availability.
+
+Billing frequencies.
+
+Minimum quantities.
+
+Renewal permissions.
+
+Plan versioning.
+
+Subscriptions
+
+Creation.
+
+Lifecycle transitions.
+
+Pause/resume.
+
+Renewal.
+
+Closure.
+
+Proration.
+
+Billing dates.
+
+Month-end dates.
+
+Leap years.
+
+Invoicing
+
+Automatic generation.
+
+Idempotency.
+
+Duplicate prevention.
+
+Tax calculation.
+
+Discount calculation.
+
+Invoice snapshots.
+
+Billing failure handling.
+
+Run voiding.
+
+Payments
+
+Successful payments.
+
+Partial payments.
+
+Multiple allocations.
+
+Overpayment handling.
+
+Outstanding balance.
+
+Automatic invoice status.
+
+Advanced features
+
+Revenue leakage.
+
+Approval authorization.
+
+Audit history.
+
+Billing simulation isolation.
+
+Forecast separation.
+
+CSV validation.
+
+Reconciliation.
+
+Dunning stop conditions.
+
+End-to-end workflow
+
+Verify this complete sequence:
+
+Create product → Add variant → Create plan → Create quotation → Confirm quotation → Create subscription → Activate subscription → Dry-run billing → Execute billing → Execute billing again → Confirm no duplicates → Verify invoice → Record partial payment → Record remaining payment → Verify invoice settlement → Verify dashboard → Verify audit history.
+
+Also verify that:
+
+Customers cannot access other customers' data.
+
+Staff cannot perform restricted admin operations.
+
+Unauthorized financial changes are rejected.
+
+Failed jobs are visible.
+
+Simulations never modify live data.
+
+Every navigation item works.
+
+Every major button performs its intended action.
+
+Every form validates input.
+
+Responsive layouts work.
+
+Never claim a test passed unless it was actually run.
+
+30. IMPLEMENTATION PHASES
+
+Implement the system phase by phase.
+
+Do not generate many disconnected pages before establishing working business logic.
+
+PHASE 1 — FOUNDATION
+
+Build:
+
+Project structure.
+
+Design system.
+
+Responsive application shell.
+
+Authentication.
+
+Role-based authorization.
+
+Database.
+
+Repository layer.
+
+Core services.
+
+Seed data.
+
+Initial navigation.
+
+PHASE 2 — CORE ADMINISTRATION
+
+Build:
+
+Dashboard.
+
+Products.
+
+Variants.
+
+Plans.
+
+Plan versioning.
+
+Customers.
+
+Staff management.
+
+PHASE 3 — SUBSCRIPTION OPERATIONS
+
+Build:
+
+Quotation templates.
+
+Quotations.
+
+Subscription creation.
+
+Subscription lifecycle.
+
+Journey Track.
+
+Pause/resume.
+
+Renewals.
+
+Closure.
+
+Proration.
+
+PHASE 4 — FINANCIAL OPERATIONS
+
+Build:
+
+Pricing engine.
+
+Tax engine.
+
+Discount engine.
+
+Billing console.
+
+Invoice generation.
+
+Payments.
+
+Credit notes.
+
+Reconciliation.
+
+Gentle Chase.
+
+Dunning.
+
+PHASE 5 — CUSTOMER EXPERIENCE
+
+Build:
+
+Customer portal.
+
+Next Bill, Explained.
+
+Subscription self-service.
+
+Invoice downloads.
+
+Payment history.
+
+Notifications.
+
+Responsive mobile experience.
+
+PHASE 6 — BUSINESS INTELLIGENCE
+
+Build:
+
+Revenue Pulse.
+
+Financial reporting.
+
+Cash flow.
+
+Revenue forecasting.
+
+Churn intelligence.
+
+Customer segmentation.
+
+Smart Billing Calendar.
+
+Staff Month Ribbon.
+
+PHASE 7 — ADVANCED ADMINISTRATION
+
+Build:
+
+AI assistant.
+
+Revenue leakage detection.
+
+Approval workflows.
+
+Audit center.
+
+System health monitor.
+
+Pricing simulator.
+
+Custom dashboards.
+
+Bulk tools.
+
+Multi-company support.
+
+Automation studio.
+
+Command palette.
+
+PHASE 8 — HARDENING AND FINAL VALIDATION
+
+Complete:
+
+Automated tests.
+
+End-to-end validation.
+
+Financial correctness.
+
+Permission checks.
+
+Data integrity.
+
+Performance testing.
+
+Accessibility.
+
+Responsive testing.
+
+Motion performance.
+
+Error correction.
+
+Documentation.
+
+Mandatory vertical slice
+
+Before expanding into advanced features, make this entire workflow work:
+
+Admin creates product → Adds variant → Creates plan → Creates quotation → Confirms quotation → Activates subscription → Runs billing dry-run → Runs billing → Runs billing again with zero duplicates → Invoice is created → Tax and discount are correct → Partial payment is recorded → Remaining payment is recorded → Invoice becomes Paid → Dashboard updates → Audit entry is recorded.
+
+Keep this workflow functional throughout development.
+
+At the end of every phase:
+
+State what was implemented.
+
+State what actually works.
+
+State what tests were run.
+
+State what passed and failed.
+
+State what remains incomplete.
+
+Continue to the next incomplete phase.
+
+Do not stop after the first dashboard or initial CRUD screens.
+
+31. FINAL ACCEPTANCE CHECKLIST
+
+The application is not complete until the following are verified:
+
+Registration works.
+
+Duplicate email is rejected case-insensitively.
+
+Password requirements are enforced.
+
+Password recovery works with secure expiring tokens.
+
+Admin, Staff and Customer roles work.
+
+Backend authorization is enforced.
+
+Only Admin can create staff.
+
+Only Admin can create discount and tax rules.
+
+Product variants calculate correctly.
+
+Plan configurations work.
+
+Plan versioning and grandfathering work.
+
+Quotations convert into subscriptions.
+
+Subscription lifecycle transitions are enforced.
+
+Pause and renewal permissions are respected.
+
+Billing dates are correct.
+
+Billing generates invoices automatically.
+
+Repeated billing creates no duplicates.
+
+Failed billing jobs are visible.
+
+Taxes and discounts calculate correctly.
+
+Invoice snapshots preserve historical values.
+
+Partial payments work.
+
+Outstanding balances are accurate.
+
+Paid status is calculated from valid payment allocations.
+
+Overpayment is handled explicitly.
+
+Customer records are isolated.
+
+Financial reports use persisted records.
+
+Revenue Pulse uses actual financial data.
+
+Forecasts are clearly separated from actuals.
+
+Approval workflows are enforced.
+
+Audit logs are immutable.
+
+Revenue leakage checks work.
+
+Billing simulations do not change live records.
+
+Reconciliation works with the sample CSV.
+
+Dunning stops when invoices are paid.
+
+Every navigation item works.
+
+Every major button works.
+
+Forms validate correctly.
+
+No dead controls or fake integrations remain.
+
+Mobile, tablet and desktop layouts work.
+
+Motion graphics remain smooth and lightweight.
+
+Reduced-motion preferences are respected.
+
+Common operations meet the two-second performance target under the specified test workload.
+
+Automated tests and build checks are run.
+
+README documents setup, environment variables, migrations, seed data, demo accounts, tests and integration limitations.
+
+32. FINAL CREATIVE DIRECTION
+
+Brightloop Pulse must feel like a premium next-generation fintech SaaS platform.
+
+The experience should combine:
+
+The clarity of a modern financial dashboard.
+
+The simplicity of a customer self-service portal.
+
+The power of an enterprise subscription management system.
+
+The intelligence of a business operations platform.
+
+The smoothness of a carefully designed modern web application.
+
+The administrator should feel in control.
+
+The staff should feel that repetitive work has become effortless.
+
+The finance team should trust every number.
+
+The customer should feel informed, respected and confident about every payment.
+
+The interface must be eye-catching without becoming cluttered.
+
+Use elegant layouts, meaningful charts, tasteful motion graphics, refined interactions and consistent visual language.
+
+Make the application feel fast, responsive and polished.
+
+Do not let animations interfere with usability or performance.
+
+The first screen must communicate financial intelligence, reliability, simplicity and trust.
+
+Build a product that is both visually impressive and functionally dependable.
+
+FINAL EXECUTION COMMAND
+
+Build BRIGHTLOOP PULSE — Every Subscription. Every Payment. Always in Sync.
+
+Start implementing the complete application now.
+
+Inspect the capabilities of the Google AI Studio Build environment and select the most reliable supported full-stack architecture.
+
+Begin with the foundation and mandatory vertical slice. Implement the complete application phase by phase. Connect every module to real persisted data. Enforce backend authorization. Protect financial calculations and billing operations. Add the premium design system and lightweight motion graphics without sacrificing performance.
+
+Do not stop at mockups, a landing page, a dashboard or basic CRUD.
+
+Do not use fake financial figures or claim unconfigured integrations are active.
+
+Test each workflow, fix errors and continue until all core modules and agreed advanced features are functional.
+
+The final deliverable must be a complete, responsive, secure, professional and smooth Brightloop Pulse application — not merely a visual prototype.

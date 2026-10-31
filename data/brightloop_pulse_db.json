@@ -1,0 +1,2741 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "email": "admin@brightloop.io",
+      "fullName": "Vikramaditya Sharma",
+      "role": "admin",
+      "createdAt": "2026-01-15T08:00:00Z",
+      "lastLoginAt": "2026-10-31T09:33:21.165Z",
+      "failedLoginAttempts": 0,
+      "isLocked": false,
+      "twoFactorEnabled": true
+    },
+    {
+      "id": "usr_staff_sarah",
+      "email": "sarah.ops@brightloop.io",
+      "fullName": "Sarah Jenkins",
+      "role": "staff",
+      "staffId": "stf_01",
+      "createdAt": "2026-02-01T09:30:00Z",
+      "lastLoginAt": "2026-10-30T17:15:00Z",
+      "failedLoginAttempts": 0,
+      "isLocked": false
+    },
+    {
+      "id": "usr_staff_arjun",
+      "email": "arjun.sales@brightloop.io",
+      "fullName": "Arjun Nambiar",
+      "role": "staff",
+      "staffId": "stf_02",
+      "createdAt": "2026-02-10T10:00:00Z",
+      "lastLoginAt": "2026-10-30T14:20:00Z",
+      "failedLoginAttempts": 0,
+      "isLocked": false
+    },
+    {
+      "id": "usr_cust_priya",
+      "email": "priya@acmetech.in",
+      "fullName": "Priya Sundaram",
+      "role": "customer",
+      "customerId": "cust_01",
+      "createdAt": "2026-03-01T11:00:00Z",
+      "lastLoginAt": "2026-10-29T10:30:00Z",
+      "failedLoginAttempts": 0,
+      "isLocked": false
+    },
+    {
+      "id": "usr_cust_rohit",
+      "email": "rohit@zenithcorp.co",
+      "fullName": "Rohit Verma",
+      "role": "customer",
+      "customerId": "cust_02",
+      "createdAt": "2026-03-15T12:00:00Z",
+      "lastLoginAt": "2026-10-28T09:45:00Z",
+      "failedLoginAttempts": 0,
+      "isLocked": false
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_erp",
+      "name": "Brightloop Pulse ERP Suite",
+      "code": "BL-ERP-01",
+      "type": "Software",
+      "salesPricePaise": 4500000,
+      "costPricePaise": 1200000,
+      "description": "End-to-end subscription & resource orchestration engine for scale-ups.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [
+        {
+          "id": "var_erp_std",
+          "sku": "BL-ERP-STD",
+          "attributeName": "Edition",
+          "attributeValue": "Standard Cloud",
+          "additionalPricePaise": 0
+        },
+        {
+          "id": "var_erp_ent",
+          "sku": "BL-ERP-ENT",
+          "attributeName": "Edition",
+          "attributeValue": "Enterprise Dedicated",
+          "additionalPricePaise": 2500000
+        },
+        {
+          "id": "var_erp_soc2",
+          "sku": "BL-ERP-SOC2",
+          "attributeName": "Edition",
+          "attributeValue": "Fintech SOC-2 Air-Gapped",
+          "additionalPricePaise": 5000000
+        }
+      ],
+      "createdAt": "2026-01-10T00:00:00Z",
+      "updatedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "prod_pulse_bi",
+      "name": "Pulse Business Intelligence Engine",
+      "code": "BL-BI-02",
+      "type": "Software",
+      "salesPricePaise": 2200000,
+      "costPricePaise": 500000,
+      "description": "Cohort churn analytics, cash flow forecasting and cohort telemetry.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [
+        {
+          "id": "var_bi_base",
+          "sku": "BL-BI-BASE",
+          "attributeName": "Capacity",
+          "attributeValue": "Up to 10k Records",
+          "additionalPricePaise": 0
+        },
+        {
+          "id": "var_bi_unlim",
+          "sku": "BL-BI-UNL",
+          "attributeName": "Capacity",
+          "attributeValue": "Unlimited Analytics",
+          "additionalPricePaise": 1800000
+        }
+      ],
+      "createdAt": "2026-01-15T00:00:00Z",
+      "updatedAt": "2026-08-10T00:00:00Z"
+    },
+    {
+      "id": "prod_api_gw",
+      "name": "High-Throughput API Gateway",
+      "code": "BL-API-03",
+      "type": "Software",
+      "salesPricePaise": 1500000,
+      "costPricePaise": 350000,
+      "description": "Global low-latency API proxy with rate-limiting, webhooks and idempotency keys.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [
+        {
+          "id": "var_api_std",
+          "sku": "BL-API-STD",
+          "attributeName": "Bandwidth",
+          "attributeValue": "5 Million Hits",
+          "additionalPricePaise": 0
+        },
+        {
+          "id": "var_api_scale",
+          "sku": "BL-API-SCL",
+          "attributeName": "Bandwidth",
+          "attributeValue": "25 Million Hits",
+          "additionalPricePaise": 1200000
+        }
+      ],
+      "createdAt": "2026-02-01T00:00:00Z",
+      "updatedAt": "2026-09-01T00:00:00Z"
+    },
+    {
+      "id": "prod_hrm",
+      "name": "Cloud HRM & Staff Orchestrator",
+      "code": "BL-HRM-04",
+      "type": "Software",
+      "salesPricePaise": 1800000,
+      "costPricePaise": 400000,
+      "description": "Payroll compliance, shift scheduling and biometric integrations.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-02-15T00:00:00Z",
+      "updatedAt": "2026-09-15T00:00:00Z"
+    },
+    {
+      "id": "prod_ai_seat",
+      "name": "Pulse Copilot AI Seat",
+      "code": "BL-AI-05",
+      "type": "Add-on",
+      "salesPricePaise": 350000,
+      "costPricePaise": 110000,
+      "description": "Natural language billing explanations and automatic reconciliation suggestion agent.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-03-01T00:00:00Z",
+      "updatedAt": "2026-10-15T00:00:00Z"
+    },
+    {
+      "id": "prod_support_sla",
+      "name": "24/7 Priority Financial SLA",
+      "code": "BL-SLA-06",
+      "type": "Service",
+      "salesPricePaise": 2500000,
+      "costPricePaise": 900000,
+      "description": "Dedicated financial operations TAM with 15-minute response SLA.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-03-10T00:00:00Z",
+      "updatedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "prod_audit_svc",
+      "name": "Quarterly Billing Audit & Recon Service",
+      "code": "BL-REC-07",
+      "type": "Service",
+      "salesPricePaise": 5000000,
+      "costPricePaise": 1800000,
+      "description": "Handcrafted balance sheet reconciliation by senior chartered accountants.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-03-20T00:00:00Z",
+      "updatedAt": "2026-07-01T00:00:00Z"
+    },
+    {
+      "id": "prod_storage_tb",
+      "name": "Immutable Financial Vault Storage (1TB)",
+      "code": "BL-STG-08",
+      "type": "Add-on",
+      "salesPricePaise": 600000,
+      "costPricePaise": 180000,
+      "description": "WORM-compliant encrypted ledger backup storage.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-04-01T00:00:00Z",
+      "updatedAt": "2026-08-01T00:00:00Z"
+    },
+    {
+      "id": "prod_hardware_token",
+      "name": "Hardware FIDO2 Security Token",
+      "code": "BL-FIDO-09",
+      "type": "Physical",
+      "salesPricePaise": 450000,
+      "costPricePaise": 210000,
+      "description": "Cryptographic dual-interface USB-C/NFC physical security key.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-04-10T00:00:00Z",
+      "updatedAt": "2026-09-01T00:00:00Z"
+    },
+    {
+      "id": "prod_payment_pos",
+      "name": "Smart Retail Billing Terminal",
+      "code": "BL-POS-10",
+      "type": "Physical",
+      "salesPricePaise": 1250000,
+      "costPricePaise": 800000,
+      "description": "Integrated dual-screen thermal printer terminal with UPI QR generator.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-05-01T00:00:00Z",
+      "updatedAt": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": "prod_daily_cloud",
+      "name": "High-Performance GPU Cluster Access",
+      "code": "BL-GPU-11",
+      "type": "Service",
+      "salesPricePaise": 300000,
+      "costPricePaise": 160000,
+      "description": "Dedicated Nvidia H100 computational node billed on daily cycles.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-05-15T00:00:00Z",
+      "updatedAt": "2026-09-20T00:00:00Z"
+    },
+    {
+      "id": "prod_weekly_pentest",
+      "name": "Automated Continuous Penetration Prober",
+      "code": "BL-PEN-12",
+      "type": "Software",
+      "salesPricePaise": 850000,
+      "costPricePaise": 250000,
+      "description": "Weekly scheduled perimeter security & compliance test harness.",
+      "currency": "INR",
+      "status": "active",
+      "variants": [],
+      "createdAt": "2026-06-01T00:00:00Z",
+      "updatedAt": "2026-10-01T00:00:00Z"
+    }
+  ],
+  "plans": [
+    {
+      "id": "plan_erp_monthly",
+      "name": "ERP Professional Monthly",
+      "code": "ERP-MTH-PRO",
+      "productId": "prod_erp",
+      "description": "Comprehensive business accounting and automated subscription pipeline.",
+      "pricePaise": 4500000,
+      "billingFrequency": "monthly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-01-01",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": false,
+        "allowEarlyClosure": true,
+        "allowPause": true,
+        "allowRenewal": true
+      },
+      "versions": [
+        {
+          "versionNumber": 1,
+          "effectiveDate": "2026-01-01",
+          "pricePaise": 4200000,
+          "taxRuleId": "tax_gst_18",
+          "changeSummary": "Initial launch version",
+          "createdBy": "usr_admin"
+        },
+        {
+          "versionNumber": 2,
+          "effectiveDate": "2026-07-01",
+          "pricePaise": 4500000,
+          "taxRuleId": "tax_gst_18",
+          "changeSummary": "Price adjustment reflecting expanded feature set",
+          "createdBy": "usr_admin"
+        }
+      ],
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-07-01T00:00:00Z"
+    },
+    {
+      "id": "plan_erp_yearly",
+      "name": "ERP Enterprise Annual (Best Value)",
+      "code": "ERP-YR-ENT",
+      "productId": "prod_erp",
+      "description": "Annual commit including 2 months free + dedicated support SLA.",
+      "pricePaise": 45000000,
+      "billingFrequency": "yearly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-01-01",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": false,
+        "allowEarlyClosure": true,
+        "allowPause": false,
+        "allowRenewal": true
+      },
+      "versions": [
+        {
+          "versionNumber": 1,
+          "effectiveDate": "2026-01-01",
+          "pricePaise": 45000000,
+          "taxRuleId": "tax_gst_18",
+          "changeSummary": "Annual flagship release",
+          "createdBy": "usr_admin"
+        }
+      ],
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "plan_bi_monthly",
+      "name": "Pulse BI Analytics Monthly",
+      "code": "BI-MTH-STD",
+      "productId": "prod_pulse_bi",
+      "description": "Real-time cohort and revenue movement dashboards for leadership.",
+      "pricePaise": 2200000,
+      "billingFrequency": "monthly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-01-15",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": false,
+        "allowEarlyClosure": true,
+        "allowPause": true,
+        "allowRenewal": true
+      },
+      "versions": [],
+      "createdAt": "2026-01-15T00:00:00Z",
+      "updatedAt": "2026-01-15T00:00:00Z"
+    },
+    {
+      "id": "plan_api_weekly",
+      "name": "High-Traffic API Prober Weekly",
+      "code": "API-WK-BURST",
+      "productId": "prod_api_gw",
+      "description": "Weekly burst bandwidth for seasonal sales campaigns & flash events.",
+      "pricePaise": 420000,
+      "billingFrequency": "weekly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-02-01",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": true,
+        "allowEarlyClosure": true,
+        "allowPause": false,
+        "allowRenewal": true
+      },
+      "versions": [],
+      "createdAt": "2026-02-01T00:00:00Z",
+      "updatedAt": "2026-02-01T00:00:00Z"
+    },
+    {
+      "id": "plan_gpu_daily",
+      "name": "AI Model Crunching Daily Node",
+      "code": "GPU-DAY-CRUNCH",
+      "productId": "prod_daily_cloud",
+      "description": "24-hour dedicated GPU slice for high-load model inference.",
+      "pricePaise": 300000,
+      "billingFrequency": "daily",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-05-15",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": true,
+        "allowEarlyClosure": false,
+        "allowPause": false,
+        "allowRenewal": true
+      },
+      "versions": [],
+      "createdAt": "2026-05-15T00:00:00Z",
+      "updatedAt": "2026-05-15T00:00:00Z"
+    },
+    {
+      "id": "plan_pentest_weekly",
+      "name": "Continuous Cyber Auditing Weekly",
+      "code": "CYB-WK-AUDIT",
+      "productId": "prod_weekly_pentest",
+      "description": "Continuous weekly fuzzing and vulnerability scanning report.",
+      "pricePaise": 850000,
+      "billingFrequency": "weekly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-06-01",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": false,
+        "allowEarlyClosure": true,
+        "allowPause": true,
+        "allowRenewal": true
+      },
+      "versions": [],
+      "createdAt": "2026-06-01T00:00:00Z",
+      "updatedAt": "2026-06-01T00:00:00Z"
+    },
+    {
+      "id": "plan_hrm_monthly",
+      "name": "Staff & Payroll Orchestration Monthly",
+      "code": "HRM-MTH-ORG",
+      "productId": "prod_hrm",
+      "description": "Full workforce lifecycle for growing multi-branch operations.",
+      "pricePaise": 1800000,
+      "billingFrequency": "monthly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-02-15",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": false,
+        "allowEarlyClosure": true,
+        "allowPause": true,
+        "allowRenewal": true
+      },
+      "versions": [],
+      "createdAt": "2026-02-15T00:00:00Z",
+      "updatedAt": "2026-02-15T00:00:00Z"
+    },
+    {
+      "id": "plan_support_sla_yearly",
+      "name": "Mission Critical 24/7 SLA Annual",
+      "code": "SLA-YR-GOLD",
+      "productId": "prod_support_sla",
+      "description": "Named incident commander and guaranteed 15-minute response turnaround.",
+      "pricePaise": 25000000,
+      "billingFrequency": "yearly",
+      "minimumQuantity": 1,
+      "availabilityStartDate": "2026-03-10",
+      "taxRuleId": "tax_gst_18",
+      "status": "active",
+      "behavior": {
+        "autoCloseAtEndDate": false,
+        "allowEarlyClosure": true,
+        "allowPause": false,
+        "allowRenewal": true
+      },
+      "versions": [],
+      "createdAt": "2026-03-10T00:00:00Z",
+      "updatedAt": "2026-03-10T00:00:00Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust_01",
+      "customerNumber": "CUST-2026-001",
+      "companyName": "Acme Infotech Bengaluru Pvt Ltd",
+      "contactName": "Priya Sundaram",
+      "email": "priya@acmetech.in",
+      "phone": "+91 98450 12345",
+      "billingAddress": {
+        "line1": "7th Floor, Prestige Tech Park",
+        "line2": "Marathahalli Outer Ring Rd",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560103",
+        "country": "India"
+      },
+      "taxId": "29ABCDE1234F1Z5",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 18500000,
+      "createdAt": "2026-01-20T08:00:00Z",
+      "updatedAt": "2026-10-25T10:00:00Z"
+    },
+    {
+      "id": "cust_02",
+      "customerNumber": "CUST-2026-002",
+      "companyName": "Zenith Healthcare Technologies",
+      "contactName": "Rohit Verma",
+      "email": "rohit@zenithcorp.co",
+      "phone": "+91 99201 67890",
+      "billingAddress": {
+        "line1": "Tower B, Nesco IT Park",
+        "line2": "Goregaon East",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "postalCode": "400063",
+        "country": "India"
+      },
+      "taxId": "27AABCV8976Q1ZM",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 5310000,
+      "totalPaidPaise": 15930000,
+      "createdAt": "2026-02-05T09:00:00Z",
+      "updatedAt": "2026-10-28T14:00:00Z"
+    },
+    {
+      "id": "cust_03",
+      "customerNumber": "CUST-2026-003",
+      "companyName": "Paramount Logistics Hub",
+      "contactName": "Ananya Deshmukh",
+      "email": "finance@paramountlog.com",
+      "phone": "+91 94220 54321",
+      "billingAddress": {
+        "line1": "Plot 44, Viman Nagar Logistics Zone",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "postalCode": "411014",
+        "country": "India"
+      },
+      "taxId": "27AABCP3321L1ZN",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 2596000,
+      "totalPaidPaise": 25960000,
+      "createdAt": "2026-02-18T10:30:00Z",
+      "updatedAt": "2026-10-29T11:00:00Z"
+    },
+    {
+      "id": "cust_04",
+      "customerNumber": "CUST-2026-004",
+      "companyName": "Kaveri Renewable Energy Corp",
+      "contactName": "Murali Krishna",
+      "email": "accounts@kaverienergy.in",
+      "phone": "+91 98840 98765",
+      "billingAddress": {
+        "line1": "Cyber Pearl, HITEC City",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "postalCode": "500081",
+        "country": "India"
+      },
+      "taxId": "36AAACK4567M1ZV",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 53100000,
+      "createdAt": "2026-03-01T11:00:00Z",
+      "updatedAt": "2026-10-30T10:00:00Z"
+    },
+    {
+      "id": "cust_05",
+      "customerNumber": "CUST-2026-005",
+      "companyName": "Finova NeoBanking Solutions",
+      "contactName": "Sanjay Aggarwal",
+      "email": "sanjay@finovabank.io",
+      "phone": "+91 98110 34567",
+      "billingAddress": {
+        "line1": "DLF Cyber City, Phase III",
+        "city": "Gurugram",
+        "state": "Haryana",
+        "postalCode": "122002",
+        "country": "India"
+      },
+      "taxId": "06AAACF7890N1ZW",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 11800000,
+      "totalPaidPaise": 47200000,
+      "createdAt": "2026-03-12T09:15:00Z",
+      "updatedAt": "2026-10-27T16:00:00Z"
+    },
+    {
+      "id": "cust_06",
+      "customerNumber": "CUST-2026-006",
+      "companyName": "Hyperion Systems India",
+      "contactName": "Gautam Iyer",
+      "email": "gautam.iyer@hyperionsystemsindia.com",
+      "phone": "+91 9811407402",
+      "billingAddress": {
+        "line1": "106, Industrial Tech Zone",
+        "city": "Chandigarh",
+        "state": "Punjab",
+        "postalCode": "040016",
+        "country": "India"
+      },
+      "taxId": "04AABBC1006D1Z6",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 7500000,
+      "createdAt": "2026-07-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_07",
+      "customerNumber": "CUST-2026-007",
+      "companyName": "Trident Labs India",
+      "contactName": "Pooja Bhat",
+      "email": "pooja.bhat@tridentlabsindia.com",
+      "phone": "+91 9811641969",
+      "billingAddress": {
+        "line1": "107, Industrial Tech Zone",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "postalCode": "330017",
+        "country": "India"
+      },
+      "taxId": "33AABBC1007D1Z7",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 3540000,
+      "totalPaidPaise": 8750000,
+      "createdAt": "2026-08-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_08",
+      "customerNumber": "CUST-2026-008",
+      "companyName": "Orbit Technologies India",
+      "contactName": "Vivek Joshi",
+      "email": "vivek.joshi@orbittechnologiesindia.com",
+      "phone": "+91 9811876536",
+      "billingAddress": {
+        "line1": "108, Industrial Tech Zone",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "240018",
+        "country": "India"
+      },
+      "taxId": "24AABBC1008D1Z8",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 10000000,
+      "createdAt": "2026-01-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_09",
+      "customerNumber": "CUST-2026-009",
+      "companyName": "Optima Consulting India",
+      "contactName": "Meera Chauhan",
+      "email": "meera.chauhan@optimaconsultingindia.com",
+      "phone": "+91 9812111103",
+      "billingAddress": {
+        "line1": "109, Industrial Tech Zone",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "postalCode": "190019",
+        "country": "India"
+      },
+      "taxId": "19AABBC1009D1Z0",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 11250000,
+      "createdAt": "2026-02-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_10",
+      "customerNumber": "CUST-2026-010",
+      "companyName": "Apex Fintech India",
+      "contactName": "Dev Menon",
+      "email": "dev.menon@apexfintechindia.com",
+      "phone": "+91 9812345670",
+      "billingAddress": {
+        "line1": "110, Industrial Tech Zone",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "postalCode": "090020",
+        "country": "India"
+      },
+      "taxId": "09AABBC1010D1Z1",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 12500000,
+      "createdAt": "2026-03-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_11",
+      "customerNumber": "CUST-2026-011",
+      "companyName": "Vanguard Ventures India",
+      "contactName": "Kavita Patel",
+      "email": "kavita.patel@vanguardventuresindia.com",
+      "phone": "+91 9812580237",
+      "billingAddress": {
+        "line1": "111, Industrial Tech Zone",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "postalCode": "080021",
+        "country": "India"
+      },
+      "taxId": "08AABBC1011D1Z2",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 13750000,
+      "createdAt": "2026-04-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_12",
+      "customerNumber": "CUST-2026-012",
+      "companyName": "Matrix Digital India",
+      "contactName": "Ramesh Kapoor",
+      "email": "ramesh.kapoor@matrixdigitalindia.com",
+      "phone": "+91 9812814804",
+      "billingAddress": {
+        "line1": "112, Industrial Tech Zone",
+        "city": "Kochi",
+        "state": "Kerala",
+        "postalCode": "320022",
+        "country": "India"
+      },
+      "taxId": "32AABBC1012D1Z3",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 15000000,
+      "createdAt": "2026-05-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_13",
+      "customerNumber": "CUST-2026-013",
+      "companyName": "Starlight Systems India",
+      "contactName": "Sneha Reddy",
+      "email": "sneha.reddy@starlightsystemsindia.com",
+      "phone": "+91 9813049371",
+      "billingAddress": {
+        "line1": "113, Industrial Tech Zone",
+        "city": "Chandigarh",
+        "state": "Punjab",
+        "postalCode": "040023",
+        "country": "India"
+      },
+      "taxId": "04AABBC1013D1Z4",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 16250000,
+      "createdAt": "2026-06-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_14",
+      "customerNumber": "CUST-2026-014",
+      "companyName": "Solarium Labs India",
+      "contactName": "Deepak Chatterjee",
+      "email": "deepak.chatterjee@solariumlabsindia.com",
+      "phone": "+91 9813283938",
+      "billingAddress": {
+        "line1": "114, Industrial Tech Zone",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "postalCode": "330024",
+        "country": "India"
+      },
+      "taxId": "33AABBC1014D1Z5",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 3540000,
+      "totalPaidPaise": 17500000,
+      "createdAt": "2026-07-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_15",
+      "customerNumber": "CUST-2026-015",
+      "companyName": "Equinox Technologies India",
+      "contactName": "Nisha Gupta",
+      "email": "nisha.gupta@equinoxtechnologiesindia.com",
+      "phone": "+91 9813518505",
+      "billingAddress": {
+        "line1": "115, Industrial Tech Zone",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "240025",
+        "country": "India"
+      },
+      "taxId": "24AABBC1015D1Z6",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 18750000,
+      "createdAt": "2026-08-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_16",
+      "customerNumber": "CUST-2026-016",
+      "companyName": "Hyperion Consulting India",
+      "contactName": "Gautam Iyer",
+      "email": "gautam.iyer@hyperionconsultingindia.com",
+      "phone": "+91 9813753072",
+      "billingAddress": {
+        "line1": "116, Industrial Tech Zone",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "postalCode": "190026",
+        "country": "India"
+      },
+      "taxId": "19AABBC1016D1Z7",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 20000000,
+      "createdAt": "2026-01-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_17",
+      "customerNumber": "CUST-2026-017",
+      "companyName": "Trident Fintech India",
+      "contactName": "Pooja Bhat",
+      "email": "pooja.bhat@tridentfintechindia.com",
+      "phone": "+91 9813987639",
+      "billingAddress": {
+        "line1": "117, Industrial Tech Zone",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "postalCode": "090027",
+        "country": "India"
+      },
+      "taxId": "09AABBC1017D1Z8",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 21250000,
+      "createdAt": "2026-02-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_18",
+      "customerNumber": "CUST-2026-018",
+      "companyName": "Orbit Ventures India",
+      "contactName": "Vivek Joshi",
+      "email": "vivek.joshi@orbitventuresindia.com",
+      "phone": "+91 9814222206",
+      "billingAddress": {
+        "line1": "118, Industrial Tech Zone",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "postalCode": "080028",
+        "country": "India"
+      },
+      "taxId": "08AABBC1018D1Z0",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 22500000,
+      "createdAt": "2026-03-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_19",
+      "customerNumber": "CUST-2026-019",
+      "companyName": "Optima Digital India",
+      "contactName": "Meera Chauhan",
+      "email": "meera.chauhan@optimadigitalindia.com",
+      "phone": "+91 9814456773",
+      "billingAddress": {
+        "line1": "119, Industrial Tech Zone",
+        "city": "Kochi",
+        "state": "Kerala",
+        "postalCode": "320029",
+        "country": "India"
+      },
+      "taxId": "32AABBC1019D1Z1",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 23750000,
+      "createdAt": "2026-04-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_20",
+      "customerNumber": "CUST-2026-020",
+      "companyName": "Apex Systems India",
+      "contactName": "Dev Menon",
+      "email": "dev.menon@apexsystemsindia.com",
+      "phone": "+91 9814691340",
+      "billingAddress": {
+        "line1": "120, Industrial Tech Zone",
+        "city": "Chandigarh",
+        "state": "Punjab",
+        "postalCode": "040030",
+        "country": "India"
+      },
+      "taxId": "04AABBC1020D1Z2",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 25000000,
+      "createdAt": "2026-05-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_21",
+      "customerNumber": "CUST-2026-021",
+      "companyName": "Vanguard Labs Solutions",
+      "contactName": "Kavita Patel",
+      "email": "kavita.patel@vanguardlabssolutions.com",
+      "phone": "+91 9814925907",
+      "billingAddress": {
+        "line1": "121, Industrial Tech Zone",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "postalCode": "330031",
+        "country": "India"
+      },
+      "taxId": "33AABBC1021D1Z3",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 3540000,
+      "totalPaidPaise": 26250000,
+      "createdAt": "2026-06-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_22",
+      "customerNumber": "CUST-2026-022",
+      "companyName": "Matrix Technologies Solutions",
+      "contactName": "Ramesh Kapoor",
+      "email": "ramesh.kapoor@matrixtechnologiessolutions.com",
+      "phone": "+91 9815160474",
+      "billingAddress": {
+        "line1": "122, Industrial Tech Zone",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "240032",
+        "country": "India"
+      },
+      "taxId": "24AABBC1022D1Z4",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 27500000,
+      "createdAt": "2026-07-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_23",
+      "customerNumber": "CUST-2026-023",
+      "companyName": "Starlight Consulting Solutions",
+      "contactName": "Sneha Reddy",
+      "email": "sneha.reddy@starlightconsultingsolutions.com",
+      "phone": "+91 9815395041",
+      "billingAddress": {
+        "line1": "123, Industrial Tech Zone",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "postalCode": "190033",
+        "country": "India"
+      },
+      "taxId": "19AABBC1023D1Z5",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 28750000,
+      "createdAt": "2026-08-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_24",
+      "customerNumber": "CUST-2026-024",
+      "companyName": "Solarium Fintech Solutions",
+      "contactName": "Deepak Chatterjee",
+      "email": "deepak.chatterjee@solariumfintechsolutions.com",
+      "phone": "+91 9815629608",
+      "billingAddress": {
+        "line1": "124, Industrial Tech Zone",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "postalCode": "090034",
+        "country": "India"
+      },
+      "taxId": "09AABBC1024D1Z6",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 30000000,
+      "createdAt": "2026-01-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_25",
+      "customerNumber": "CUST-2026-025",
+      "companyName": "Equinox Ventures Solutions",
+      "contactName": "Nisha Gupta",
+      "email": "nisha.gupta@equinoxventuressolutions.com",
+      "phone": "+91 9815864175",
+      "billingAddress": {
+        "line1": "125, Industrial Tech Zone",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "postalCode": "080035",
+        "country": "India"
+      },
+      "taxId": "08AABBC1025D1Z7",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 31250000,
+      "createdAt": "2026-02-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_26",
+      "customerNumber": "CUST-2026-026",
+      "companyName": "Hyperion Digital Solutions",
+      "contactName": "Gautam Iyer",
+      "email": "gautam.iyer@hyperiondigitalsolutions.com",
+      "phone": "+91 9816098742",
+      "billingAddress": {
+        "line1": "126, Industrial Tech Zone",
+        "city": "Kochi",
+        "state": "Kerala",
+        "postalCode": "320036",
+        "country": "India"
+      },
+      "taxId": "32AABBC1026D1Z8",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 32500000,
+      "createdAt": "2026-03-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_27",
+      "customerNumber": "CUST-2026-027",
+      "companyName": "Trident Systems Solutions",
+      "contactName": "Pooja Bhat",
+      "email": "pooja.bhat@tridentsystemssolutions.com",
+      "phone": "+91 9816333309",
+      "billingAddress": {
+        "line1": "127, Industrial Tech Zone",
+        "city": "Chandigarh",
+        "state": "Punjab",
+        "postalCode": "040037",
+        "country": "India"
+      },
+      "taxId": "04AABBC1027D1Z0",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 33750000,
+      "createdAt": "2026-04-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_28",
+      "customerNumber": "CUST-2026-028",
+      "companyName": "Orbit Labs Solutions",
+      "contactName": "Vivek Joshi",
+      "email": "vivek.joshi@orbitlabssolutions.com",
+      "phone": "+91 9816567876",
+      "billingAddress": {
+        "line1": "128, Industrial Tech Zone",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "postalCode": "330038",
+        "country": "India"
+      },
+      "taxId": "33AABBC1028D1Z1",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 3540000,
+      "totalPaidPaise": 35000000,
+      "createdAt": "2026-05-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_29",
+      "customerNumber": "CUST-2026-029",
+      "companyName": "Optima Technologies Solutions",
+      "contactName": "Meera Chauhan",
+      "email": "meera.chauhan@optimatechnologiessolutions.com",
+      "phone": "+91 9816802443",
+      "billingAddress": {
+        "line1": "129, Industrial Tech Zone",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "240039",
+        "country": "India"
+      },
+      "taxId": "24AABBC1029D1Z2",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 36250000,
+      "createdAt": "2026-06-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_30",
+      "customerNumber": "CUST-2026-030",
+      "companyName": "Apex Consulting Solutions",
+      "contactName": "Dev Menon",
+      "email": "dev.menon@apexconsultingsolutions.com",
+      "phone": "+91 9817037010",
+      "billingAddress": {
+        "line1": "130, Industrial Tech Zone",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "postalCode": "190040",
+        "country": "India"
+      },
+      "taxId": "19AABBC1030D1Z3",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 37500000,
+      "createdAt": "2026-07-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_31",
+      "customerNumber": "CUST-2026-031",
+      "companyName": "Vanguard Fintech Solutions",
+      "contactName": "Kavita Patel",
+      "email": "kavita.patel@vanguardfintechsolutions.com",
+      "phone": "+91 9817271577",
+      "billingAddress": {
+        "line1": "131, Industrial Tech Zone",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "postalCode": "090041",
+        "country": "India"
+      },
+      "taxId": "09AABBC1031D1Z4",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 38750000,
+      "createdAt": "2026-08-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_32",
+      "customerNumber": "CUST-2026-032",
+      "companyName": "Matrix Ventures Solutions",
+      "contactName": "Ramesh Kapoor",
+      "email": "ramesh.kapoor@matrixventuressolutions.com",
+      "phone": "+91 9817506144",
+      "billingAddress": {
+        "line1": "132, Industrial Tech Zone",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "postalCode": "080042",
+        "country": "India"
+      },
+      "taxId": "08AABBC1032D1Z5",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 40000000,
+      "createdAt": "2026-01-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_33",
+      "customerNumber": "CUST-2026-033",
+      "companyName": "Starlight Digital Solutions",
+      "contactName": "Sneha Reddy",
+      "email": "sneha.reddy@starlightdigitalsolutions.com",
+      "phone": "+91 9817740711",
+      "billingAddress": {
+        "line1": "133, Industrial Tech Zone",
+        "city": "Kochi",
+        "state": "Kerala",
+        "postalCode": "320043",
+        "country": "India"
+      },
+      "taxId": "32AABBC1033D1Z6",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 41250000,
+      "createdAt": "2026-02-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_34",
+      "customerNumber": "CUST-2026-034",
+      "companyName": "Solarium Systems Solutions",
+      "contactName": "Deepak Chatterjee",
+      "email": "deepak.chatterjee@solariumsystemssolutions.com",
+      "phone": "+91 9817975278",
+      "billingAddress": {
+        "line1": "134, Industrial Tech Zone",
+        "city": "Chandigarh",
+        "state": "Punjab",
+        "postalCode": "040044",
+        "country": "India"
+      },
+      "taxId": "04AABBC1034D1Z7",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 42500000,
+      "createdAt": "2026-03-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_35",
+      "customerNumber": "CUST-2026-035",
+      "companyName": "Equinox Labs Solutions",
+      "contactName": "Nisha Gupta",
+      "email": "nisha.gupta@equinoxlabssolutions.com",
+      "phone": "+91 9818209845",
+      "billingAddress": {
+        "line1": "135, Industrial Tech Zone",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "postalCode": "330045",
+        "country": "India"
+      },
+      "taxId": "33AABBC1035D1Z8",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 3540000,
+      "totalPaidPaise": 43750000,
+      "createdAt": "2026-04-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_36",
+      "customerNumber": "CUST-2026-036",
+      "companyName": "Hyperion Technologies Solutions",
+      "contactName": "Gautam Iyer",
+      "email": "gautam.iyer@hyperiontechnologiessolutions.com",
+      "phone": "+91 9818444412",
+      "billingAddress": {
+        "line1": "136, Industrial Tech Zone",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "240046",
+        "country": "India"
+      },
+      "taxId": "24AABBC1036D1Z0",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 45000000,
+      "createdAt": "2026-05-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_37",
+      "customerNumber": "CUST-2026-037",
+      "companyName": "Trident Consulting Solutions",
+      "contactName": "Pooja Bhat",
+      "email": "pooja.bhat@tridentconsultingsolutions.com",
+      "phone": "+91 9818678979",
+      "billingAddress": {
+        "line1": "137, Industrial Tech Zone",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "postalCode": "190047",
+        "country": "India"
+      },
+      "taxId": "19AABBC1037D1Z1",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 46250000,
+      "createdAt": "2026-06-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_38",
+      "customerNumber": "CUST-2026-038",
+      "companyName": "Orbit Fintech Solutions",
+      "contactName": "Vivek Joshi",
+      "email": "vivek.joshi@orbitfintechsolutions.com",
+      "phone": "+91 9818913546",
+      "billingAddress": {
+        "line1": "138, Industrial Tech Zone",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "postalCode": "090048",
+        "country": "India"
+      },
+      "taxId": "09AABBC1038D1Z2",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 47500000,
+      "createdAt": "2026-07-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_39",
+      "customerNumber": "CUST-2026-039",
+      "companyName": "Optima Ventures Solutions",
+      "contactName": "Meera Chauhan",
+      "email": "meera.chauhan@optimaventuressolutions.com",
+      "phone": "+91 9819148113",
+      "billingAddress": {
+        "line1": "139, Industrial Tech Zone",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "postalCode": "080049",
+        "country": "India"
+      },
+      "taxId": "08AABBC1039D1Z3",
+      "status": "active",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 48750000,
+      "createdAt": "2026-08-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_40",
+      "customerNumber": "CUST-2026-040",
+      "companyName": "Apex Digital Solutions",
+      "contactName": "Dev Menon",
+      "email": "dev.menon@apexdigitalsolutions.com",
+      "phone": "+91 9819382680",
+      "billingAddress": {
+        "line1": "140, Industrial Tech Zone",
+        "city": "Kochi",
+        "state": "Kerala",
+        "postalCode": "320050",
+        "country": "India"
+      },
+      "taxId": "32AABBC1040D1Z4",
+      "status": "active",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 50000000,
+      "createdAt": "2026-01-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_41",
+      "customerNumber": "CUST-2026-041",
+      "companyName": "Vanguard Systems Solutions",
+      "contactName": "Kavita Patel",
+      "email": "kavita.patel@vanguardsystemssolutions.com",
+      "phone": "+91 9819617247",
+      "billingAddress": {
+        "line1": "141, Industrial Tech Zone",
+        "city": "Chandigarh",
+        "state": "Punjab",
+        "postalCode": "040051",
+        "country": "India"
+      },
+      "taxId": "04AABBC1041D1Z5",
+      "status": "inactive",
+      "assignedStaffId": "stf_02",
+      "outstandingBalancePaise": 0,
+      "totalPaidPaise": 51250000,
+      "createdAt": "2026-02-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    },
+    {
+      "id": "cust_42",
+      "customerNumber": "CUST-2026-042",
+      "companyName": "Matrix Labs Solutions",
+      "contactName": "Ramesh Kapoor",
+      "email": "ramesh.kapoor@matrixlabssolutions.com",
+      "phone": "+91 9819851814",
+      "billingAddress": {
+        "line1": "142, Industrial Tech Zone",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "postalCode": "330052",
+        "country": "India"
+      },
+      "taxId": "33AABBC1042D1Z6",
+      "status": "prospect",
+      "assignedStaffId": "stf_01",
+      "outstandingBalancePaise": 3540000,
+      "totalPaidPaise": 52500000,
+      "createdAt": "2026-03-10T10:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z"
+    }
+  ],
+  "staffProfiles": [
+    {
+      "id": "stf_01",
+      "userId": "usr_staff_sarah",
+      "fullName": "Sarah Jenkins",
+      "email": "sarah.ops@brightloop.io",
+      "department": "Operations",
+      "status": "active",
+      "assignedCustomerCount": 22,
+      "createdAt": "2026-02-01T09:30:00Z"
+    },
+    {
+      "id": "stf_02",
+      "userId": "usr_staff_arjun",
+      "fullName": "Arjun Nambiar",
+      "email": "arjun.sales@brightloop.io",
+      "department": "Sales",
+      "status": "active",
+      "assignedCustomerCount": 18,
+      "createdAt": "2026-02-10T10:00:00Z"
+    }
+  ],
+  "quotationTemplates": [
+    {
+      "id": "tpl_standard_erp",
+      "name": "Standard ERP & BI Onboarding Bundle",
+      "description": "Preconfigured package for mid-size manufacturing and logistics firms.",
+      "defaultPlanId": "plan_erp_monthly",
+      "defaultLines": [
+        {
+          "productId": "prod_erp",
+          "variantId": "var_erp_std",
+          "quantity": 1
+        },
+        {
+          "productId": "prod_pulse_bi",
+          "variantId": "var_bi_base",
+          "quantity": 1
+        },
+        {
+          "productId": "prod_support_sla",
+          "quantity": 1
+        }
+      ],
+      "paymentTerms": "Net 15 Days",
+      "validityDays": 30,
+      "defaultDiscountCode": "FESTIVE25",
+      "createdAt": "2026-02-01T00:00:00Z"
+    },
+    {
+      "id": "tpl_enterprise_annual",
+      "name": "Enterprise Mission-Critical Annual Pack",
+      "description": "Dedicated enterprise air-gapped setup with SLA and hardware tokens.",
+      "defaultPlanId": "plan_erp_yearly",
+      "defaultLines": [
+        {
+          "productId": "prod_erp",
+          "variantId": "var_erp_ent",
+          "quantity": 1
+        },
+        {
+          "productId": "prod_support_sla",
+          "quantity": 1
+        },
+        {
+          "productId": "prod_hardware_token",
+          "quantity": 5
+        }
+      ],
+      "paymentTerms": "Net 30 Days",
+      "validityDays": 45,
+      "defaultDiscountCode": "LOYALTY15",
+      "createdAt": "2026-03-01T00:00:00Z"
+    }
+  ],
+  "quotations": [
+    {
+      "id": "quot_01",
+      "quotationNumber": "Q-2026-00084",
+      "customerId": "cust_01",
+      "customerName": "Acme Infotech Bengaluru Pvt Ltd",
+      "planId": "plan_erp_monthly",
+      "planName": "ERP Professional Monthly",
+      "lines": [
+        {
+          "id": "qline_1",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_std",
+          "variantLabel": "Standard Cloud",
+          "basePricePaise": 4500000,
+          "variantAdditionalPaise": 0,
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 810000,
+          "lineTotalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "paymentTerms": "Net 30 Days",
+      "validUntil": "2026-11-25",
+      "status": "Converted",
+      "convertedSubscriptionId": "sub_01",
+      "createdBy": "Sarah Jenkins",
+      "createdAt": "2026-01-22T10:00:00Z",
+      "updatedAt": "2026-01-25T11:00:00Z"
+    },
+    {
+      "id": "quot_02",
+      "quotationNumber": "Q-2026-00085",
+      "customerId": "cust_02",
+      "customerName": "Zenith Healthcare Technologies",
+      "planId": "plan_erp_monthly",
+      "planName": "ERP Professional Monthly",
+      "lines": [
+        {
+          "id": "qline_2",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_std",
+          "variantLabel": "Standard Cloud",
+          "basePricePaise": 4500000,
+          "variantAdditionalPaise": 0,
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 810000,
+          "lineTotalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "paymentTerms": "Net 15 Days",
+      "validUntil": "2026-11-15",
+      "status": "Confirmed",
+      "createdBy": "Arjun Nambiar",
+      "createdAt": "2026-10-15T09:30:00Z",
+      "updatedAt": "2026-10-18T14:00:00Z"
+    },
+    {
+      "id": "quot_03",
+      "quotationNumber": "Q-2026-00086",
+      "customerId": "cust_05",
+      "customerName": "Finova NeoBanking Solutions",
+      "planId": "plan_erp_yearly",
+      "planName": "ERP Enterprise Annual",
+      "lines": [
+        {
+          "id": "qline_3",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_ent",
+          "variantLabel": "Enterprise Dedicated",
+          "basePricePaise": 45000000,
+          "variantAdditionalPaise": 25000000,
+          "unitPricePaise": 70000000,
+          "quantity": 1,
+          "discountPaise": 10500000,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 10710000,
+          "lineTotalPaise": 70210000
+        }
+      ],
+      "subtotalPaise": 70000000,
+      "discountCode": "LOYALTY15",
+      "discountAmountPaise": 10500000,
+      "taxAmountPaise": 10710000,
+      "totalPaise": 70210000,
+      "paymentTerms": "Net 30 Days",
+      "validUntil": "2026-11-30",
+      "status": "Sent",
+      "createdBy": "Sarah Jenkins",
+      "createdAt": "2026-10-24T16:00:00Z",
+      "updatedAt": "2026-10-24T16:00:00Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub_01",
+      "subscriptionNumber": "SUB-2026-00042",
+      "customerId": "cust_01",
+      "customerName": "Acme Infotech Bengaluru Pvt Ltd",
+      "planId": "plan_erp_monthly",
+      "planName": "ERP Professional Monthly",
+      "billingFrequency": "monthly",
+      "startDate": "2026-01-25",
+      "nextBillingDate": "2026-11-25",
+      "paymentTerms": "Net 30 Days",
+      "lines": [
+        {
+          "id": "sline_01",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_std",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "taxRatePercent": 18,
+          "discountPaise": 0,
+          "lineTotalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "autoRenew": true,
+      "status": "Active",
+      "statusHistory": [
+        {
+          "id": "ev_1",
+          "timestamp": "2026-01-22T10:00:00Z",
+          "fromStatus": "Draft",
+          "toStatus": "Quotation",
+          "actor": "Sarah Jenkins"
+        },
+        {
+          "id": "ev_2",
+          "timestamp": "2026-01-24T12:00:00Z",
+          "fromStatus": "Quotation",
+          "toStatus": "Confirmed",
+          "actor": "Priya Sundaram"
+        },
+        {
+          "id": "ev_3",
+          "timestamp": "2026-01-25T09:00:00Z",
+          "fromStatus": "Confirmed",
+          "toStatus": "Active",
+          "actor": "System"
+        }
+      ],
+      "assignedStaffId": "stf_01",
+      "createdAt": "2026-01-22T10:00:00Z",
+      "updatedAt": "2026-10-25T09:00:00Z"
+    },
+    {
+      "id": "sub_02",
+      "subscriptionNumber": "SUB-2026-00043",
+      "customerId": "cust_02",
+      "customerName": "Zenith Healthcare Technologies",
+      "planId": "plan_erp_monthly",
+      "planName": "ERP Professional Monthly",
+      "billingFrequency": "monthly",
+      "startDate": "2026-02-10",
+      "nextBillingDate": "2026-11-10",
+      "paymentTerms": "Net 15 Days",
+      "lines": [
+        {
+          "id": "sline_02",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_std",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "taxRatePercent": 18,
+          "discountPaise": 0,
+          "lineTotalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "autoRenew": true,
+      "status": "Active",
+      "statusHistory": [
+        {
+          "id": "ev_4",
+          "timestamp": "2026-02-10T09:00:00Z",
+          "fromStatus": "Confirmed",
+          "toStatus": "Active",
+          "actor": "Arjun Nambiar"
+        }
+      ],
+      "assignedStaffId": "stf_02",
+      "createdAt": "2026-02-10T09:00:00Z",
+      "updatedAt": "2026-10-10T09:00:00Z"
+    },
+    {
+      "id": "sub_03",
+      "subscriptionNumber": "SUB-2026-00044",
+      "customerId": "cust_03",
+      "customerName": "Paramount Logistics Hub",
+      "planId": "plan_bi_monthly",
+      "planName": "Pulse BI Analytics Monthly",
+      "billingFrequency": "monthly",
+      "startDate": "2026-03-01",
+      "nextBillingDate": "2026-11-01",
+      "paymentTerms": "Net 15 Days",
+      "lines": [
+        {
+          "id": "sline_03",
+          "productId": "prod_pulse_bi",
+          "productName": "Pulse Business Intelligence Engine",
+          "variantId": "var_bi_base",
+          "variantLabel": "Up to 10k Records",
+          "unitPricePaise": 2200000,
+          "quantity": 1,
+          "taxRatePercent": 18,
+          "discountPaise": 0,
+          "lineTotalPaise": 2596000
+        }
+      ],
+      "subtotalPaise": 2200000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 396000,
+      "totalPaise": 2596000,
+      "autoRenew": true,
+      "status": "Active",
+      "statusHistory": [
+        {
+          "id": "ev_5",
+          "timestamp": "2026-03-01T09:00:00Z",
+          "fromStatus": "Confirmed",
+          "toStatus": "Active",
+          "actor": "System"
+        }
+      ],
+      "assignedStaffId": "stf_01",
+      "createdAt": "2026-03-01T09:00:00Z",
+      "updatedAt": "2026-10-01T09:00:00Z"
+    },
+    {
+      "id": "sub_04",
+      "subscriptionNumber": "SUB-2026-00045",
+      "customerId": "cust_04",
+      "customerName": "Kaveri Renewable Energy Corp",
+      "planId": "plan_erp_yearly",
+      "planName": "ERP Enterprise Annual",
+      "billingFrequency": "yearly",
+      "startDate": "2026-03-15",
+      "expiryDate": "2027-03-14",
+      "nextBillingDate": "2027-03-15",
+      "paymentTerms": "Net 30 Days",
+      "lines": [
+        {
+          "id": "sline_04",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_std",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 45000000,
+          "quantity": 1,
+          "taxRatePercent": 18,
+          "discountPaise": 0,
+          "lineTotalPaise": 53100000
+        }
+      ],
+      "subtotalPaise": 45000000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 8100000,
+      "totalPaise": 53100000,
+      "autoRenew": true,
+      "status": "Active",
+      "statusHistory": [
+        {
+          "id": "ev_6",
+          "timestamp": "2026-03-15T09:00:00Z",
+          "fromStatus": "Confirmed",
+          "toStatus": "Active",
+          "actor": "Arjun Nambiar"
+        }
+      ],
+      "assignedStaffId": "stf_02",
+      "createdAt": "2026-03-15T09:00:00Z",
+      "updatedAt": "2026-03-15T09:00:00Z"
+    },
+    {
+      "id": "sub_05",
+      "subscriptionNumber": "SUB-2026-00046",
+      "customerId": "cust_05",
+      "customerName": "Finova NeoBanking Solutions",
+      "planId": "plan_erp_monthly",
+      "planName": "ERP Professional Monthly",
+      "billingFrequency": "monthly",
+      "startDate": "2026-04-01",
+      "nextBillingDate": "2026-11-01",
+      "paymentTerms": "Net 15 Days",
+      "lines": [
+        {
+          "id": "sline_05",
+          "productId": "prod_erp",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantId": "var_erp_ent",
+          "variantLabel": "Enterprise Dedicated",
+          "unitPricePaise": 7000000,
+          "quantity": 1,
+          "taxRatePercent": 18,
+          "discountPaise": 0,
+          "lineTotalPaise": 8260000
+        }
+      ],
+      "subtotalPaise": 7000000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 1260000,
+      "totalPaise": 8260000,
+      "autoRenew": true,
+      "status": "Paused",
+      "pausedAt": "2026-10-20T10:00:00Z",
+      "statusHistory": [
+        {
+          "id": "ev_7",
+          "timestamp": "2026-04-01T09:00:00Z",
+          "fromStatus": "Confirmed",
+          "toStatus": "Active",
+          "actor": "Sarah Jenkins"
+        },
+        {
+          "id": "ev_8",
+          "timestamp": "2026-10-20T10:00:00Z",
+          "fromStatus": "Active",
+          "toStatus": "Paused",
+          "actor": "Sanjay Aggarwal",
+          "reason": "Temporary infrastructure migration"
+        }
+      ],
+      "assignedStaffId": "stf_01",
+      "createdAt": "2026-04-01T09:00:00Z",
+      "updatedAt": "2026-10-20T10:00:00Z"
+    },
+    {
+      "id": "sub_06",
+      "subscriptionNumber": "SUB-2026-00047",
+      "customerId": "cust_06",
+      "customerName": "Apex Labs India",
+      "planId": "plan_gpu_daily",
+      "planName": "AI Model Crunching Daily Node",
+      "billingFrequency": "daily",
+      "startDate": "2026-10-01",
+      "expiryDate": "2026-10-15",
+      "nextBillingDate": "2026-10-15",
+      "paymentTerms": "Immediate",
+      "lines": [
+        {
+          "id": "sline_06",
+          "productId": "prod_daily_cloud",
+          "productName": "High-Performance GPU Cluster Access",
+          "unitPricePaise": 300000,
+          "quantity": 1,
+          "taxRatePercent": 18,
+          "discountPaise": 0,
+          "lineTotalPaise": 354000
+        }
+      ],
+      "subtotalPaise": 300000,
+      "discountAmountPaise": 0,
+      "taxAmountPaise": 54000,
+      "totalPaise": 354000,
+      "autoRenew": false,
+      "status": "Closed",
+      "closedAt": "2026-10-15T23:59:59Z",
+      "closureReason": "Project compute cycle completed",
+      "statusHistory": [
+        {
+          "id": "ev_9",
+          "timestamp": "2026-10-01T00:00:00Z",
+          "fromStatus": "Confirmed",
+          "toStatus": "Active",
+          "actor": "System"
+        },
+        {
+          "id": "ev_10",
+          "timestamp": "2026-10-15T23:59:59Z",
+          "fromStatus": "Active",
+          "toStatus": "Closed",
+          "actor": "Auto-Close Engine",
+          "reason": "Reached end date"
+        }
+      ],
+      "createdAt": "2026-10-01T00:00:00Z",
+      "updatedAt": "2026-10-15T23:59:59Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv_01",
+      "invoiceNumber": "INV-2026-000101",
+      "customerId": "cust_01",
+      "customerName": "Acme Infotech Bengaluru Pvt Ltd",
+      "customerEmail": "priya@acmetech.in",
+      "billingAddress": {
+        "line1": "7th Floor, Prestige Tech Park",
+        "line2": "Marathahalli Outer Ring Rd",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560103",
+        "country": "India"
+      },
+      "subscriptionId": "sub_01",
+      "subscriptionNumber": "SUB-2026-00042",
+      "billingPeriod": "2026-09",
+      "issueDate": "2026-09-25",
+      "dueDate": "2026-10-25",
+      "lines": [
+        {
+          "id": "iline_01",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "subtotalPaise": 4500000,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 810000,
+          "totalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxes": [
+        {
+          "name": "CGST 9%",
+          "ratePercent": 9,
+          "taxAmountPaise": 405000
+        },
+        {
+          "name": "SGST 9%",
+          "ratePercent": 9,
+          "taxAmountPaise": 405000
+        }
+      ],
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "amountPaidPaise": 5310000,
+      "outstandingBalancePaise": 0,
+      "paymentTerms": "Net 30 Days",
+      "status": "Paid",
+      "sentAt": "2026-09-25T10:00:00Z",
+      "createdAt": "2026-09-25T09:00:00Z",
+      "updatedAt": "2026-10-20T14:30:00Z"
+    },
+    {
+      "id": "inv_02",
+      "invoiceNumber": "INV-2026-000102",
+      "customerId": "cust_01",
+      "customerName": "Acme Infotech Bengaluru Pvt Ltd",
+      "customerEmail": "priya@acmetech.in",
+      "billingAddress": {
+        "line1": "7th Floor, Prestige Tech Park",
+        "line2": "Marathahalli Outer Ring Rd",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560103",
+        "country": "India"
+      },
+      "subscriptionId": "sub_01",
+      "subscriptionNumber": "SUB-2026-00042",
+      "billingPeriod": "2026-10",
+      "issueDate": "2026-10-25",
+      "dueDate": "2026-11-25",
+      "lines": [
+        {
+          "id": "iline_02",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "subtotalPaise": 4500000,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 810000,
+          "totalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxes": [
+        {
+          "name": "CGST 9%",
+          "ratePercent": 9,
+          "taxAmountPaise": 405000
+        },
+        {
+          "name": "SGST 9%",
+          "ratePercent": 9,
+          "taxAmountPaise": 405000
+        }
+      ],
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "amountPaidPaise": 0,
+      "outstandingBalancePaise": 5310000,
+      "paymentTerms": "Net 30 Days",
+      "status": "Confirmed",
+      "sentAt": "2026-10-25T10:00:00Z",
+      "createdAt": "2026-10-25T09:00:00Z",
+      "updatedAt": "2026-10-25T10:00:00Z"
+    },
+    {
+      "id": "inv_03",
+      "invoiceNumber": "INV-2026-000103",
+      "customerId": "cust_02",
+      "customerName": "Zenith Healthcare Technologies",
+      "customerEmail": "rohit@zenithcorp.co",
+      "billingAddress": {
+        "line1": "Tower B, Nesco IT Park",
+        "line2": "Goregaon East",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "postalCode": "400063",
+        "country": "India"
+      },
+      "subscriptionId": "sub_02",
+      "subscriptionNumber": "SUB-2026-00043",
+      "billingPeriod": "2026-10",
+      "issueDate": "2026-10-10",
+      "dueDate": "2026-10-25",
+      "lines": [
+        {
+          "id": "iline_03",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 4500000,
+          "quantity": 1,
+          "subtotalPaise": 4500000,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 810000,
+          "totalPaise": 5310000
+        }
+      ],
+      "subtotalPaise": 4500000,
+      "discountAmountPaise": 0,
+      "taxes": [
+        {
+          "name": "IGST 18%",
+          "ratePercent": 18,
+          "taxAmountPaise": 810000
+        }
+      ],
+      "taxAmountPaise": 810000,
+      "totalPaise": 5310000,
+      "amountPaidPaise": 0,
+      "outstandingBalancePaise": 5310000,
+      "paymentTerms": "Net 15 Days",
+      "status": "Overdue",
+      "sentAt": "2026-10-10T11:00:00Z",
+      "createdAt": "2026-10-10T09:00:00Z",
+      "updatedAt": "2026-10-26T00:00:00Z"
+    },
+    {
+      "id": "inv_04",
+      "invoiceNumber": "INV-2026-000104",
+      "customerId": "cust_03",
+      "customerName": "Paramount Logistics Hub",
+      "customerEmail": "finance@paramountlog.com",
+      "billingAddress": {
+        "line1": "Plot 44, Viman Nagar Logistics Zone",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "postalCode": "411014",
+        "country": "India"
+      },
+      "subscriptionId": "sub_03",
+      "subscriptionNumber": "SUB-2026-00044",
+      "billingPeriod": "2026-10",
+      "issueDate": "2026-10-01",
+      "dueDate": "2026-10-16",
+      "lines": [
+        {
+          "id": "iline_04",
+          "productName": "Pulse Business Intelligence Engine",
+          "variantLabel": "Up to 10k Records",
+          "unitPricePaise": 2200000,
+          "quantity": 1,
+          "subtotalPaise": 2200000,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 396000,
+          "totalPaise": 2596000
+        }
+      ],
+      "subtotalPaise": 2200000,
+      "discountAmountPaise": 0,
+      "taxes": [
+        {
+          "name": "IGST 18%",
+          "ratePercent": 18,
+          "taxAmountPaise": 396000
+        }
+      ],
+      "taxAmountPaise": 396000,
+      "totalPaise": 2596000,
+      "amountPaidPaise": 1500000,
+      "outstandingBalancePaise": 1096000,
+      "paymentTerms": "Net 15 Days",
+      "status": "Partially Paid",
+      "sentAt": "2026-10-01T10:00:00Z",
+      "createdAt": "2026-10-01T09:00:00Z",
+      "updatedAt": "2026-10-12T16:00:00Z"
+    },
+    {
+      "id": "inv_05",
+      "invoiceNumber": "INV-2026-000105",
+      "customerId": "cust_04",
+      "customerName": "Kaveri Renewable Energy Corp",
+      "customerEmail": "accounts@kaverienergy.in",
+      "billingAddress": {
+        "line1": "Cyber Pearl, HITEC City",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "postalCode": "500081",
+        "country": "India"
+      },
+      "subscriptionId": "sub_04",
+      "subscriptionNumber": "SUB-2026-00045",
+      "billingPeriod": "2026-ANNUAL",
+      "issueDate": "2026-03-15",
+      "dueDate": "2026-04-15",
+      "lines": [
+        {
+          "id": "iline_05",
+          "productName": "Brightloop Pulse ERP Suite",
+          "variantLabel": "Standard Cloud",
+          "unitPricePaise": 45000000,
+          "quantity": 1,
+          "subtotalPaise": 45000000,
+          "discountPaise": 0,
+          "taxRatePercent": 18,
+          "taxAmountPaise": 8100000,
+          "totalPaise": 53100000
+        }
+      ],
+      "subtotalPaise": 45000000,
+      "discountAmountPaise": 0,
+      "taxes": [
+        {
+          "name": "IGST 18%",
+          "ratePercent": 18,
+          "taxAmountPaise": 8100000
+        }
+      ],
+      "taxAmountPaise": 8100000,
+      "totalPaise": 53100000,
+      "amountPaidPaise": 53100000,
+      "outstandingBalancePaise": 0,
+      "paymentTerms": "Net 30 Days",
+      "status": "Paid",
+      "sentAt": "2026-03-15T11:00:00Z",
+      "createdAt": "2026-03-15T09:00:00Z",
+      "updatedAt": "2026-04-05T12:00:00Z"
+    }
+  ],
+  "creditNotes": [],
+  "taxRules": [
+    {
+      "id": "tax_gst_18",
+      "name": "GST 18% (Standard Domestic)",
+      "code": "GST-18",
+      "ratePercent": 18,
+      "isInclusive": false,
+      "applicability": "global",
+      "status": "active",
+      "effectiveFrom": "2025-01-01",
+      "components": [
+        {
+          "name": "CGST 9%",
+          "ratePercent": 9
+        },
+        {
+          "name": "SGST 9%",
+          "ratePercent": 9
+        }
+      ]
+    },
+    {
+      "id": "tax_igst_18",
+      "name": "IGST 18% (Inter-State Domestic)",
+      "code": "IGST-18",
+      "ratePercent": 18,
+      "isInclusive": false,
+      "applicability": "global",
+      "status": "active",
+      "effectiveFrom": "2025-01-01",
+      "components": [
+        {
+          "name": "IGST 18%",
+          "ratePercent": 18
+        }
+      ]
+    },
+    {
+      "id": "tax_export_0",
+      "name": "Export / SEZ Zero Tax (0%)",
+      "code": "EXP-00",
+      "ratePercent": 0,
+      "isInclusive": false,
+      "applicability": "global",
+      "status": "active",
+      "effectiveFrom": "2025-01-01"
+    },
+    {
+      "id": "tax_physical_12",
+      "name": "Physical Goods GST (12%)",
+      "code": "GST-12",
+      "ratePercent": 12,
+      "isInclusive": false,
+      "applicability": "product_type",
+      "targetProductType": "Physical",
+      "status": "active",
+      "effectiveFrom": "2025-01-01"
+    }
+  ],
+  "discountRules": [
+    {
+      "id": "disc_festive25",
+      "name": "Diwali Festive Boost 25%",
+      "code": "FESTIVE25",
+      "type": "percentage",
+      "value": 25,
+      "minPurchaseAmountPaise": 2000000,
+      "startDate": "2026-10-01",
+      "endDate": "2026-11-15",
+      "usageLimit": 100,
+      "timesUsed": 14,
+      "status": "Active"
+    },
+    {
+      "id": "disc_startup50",
+      "name": "Seed Stage Tech Grants 50%",
+      "code": "STARTUP50",
+      "type": "percentage",
+      "value": 50,
+      "startDate": "2026-01-01",
+      "endDate": "2026-12-31",
+      "usageLimit": 30,
+      "timesUsed": 19,
+      "status": "Active"
+    },
+    {
+      "id": "disc_flat5k",
+      "name": "New Onboarding Welcome Credit",
+      "code": "WELCOME5000",
+      "type": "fixed",
+      "value": 500000,
+      "minPurchaseAmountPaise": 1500000,
+      "startDate": "2026-01-01",
+      "endDate": "2026-12-31",
+      "usageLimit": 200,
+      "timesUsed": 42,
+      "status": "Active"
+    },
+    {
+      "id": "disc_annualpass",
+      "name": "Enterprise Multi-Year Loyalty",
+      "code": "LOYALTY15",
+      "type": "percentage",
+      "value": 15,
+      "startDate": "2026-01-01",
+      "timesUsed": 8,
+      "status": "Active"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay_01",
+      "paymentNumber": "PAY-2026-00051",
+      "customerId": "cust_01",
+      "customerName": "Acme Infotech Bengaluru Pvt Ltd",
+      "invoiceId": "inv_01",
+      "invoiceNumber": "INV-2026-000101",
+      "paymentMethod": "UPI",
+      "amountPaise": 5310000,
+      "allocatedPaise": 5310000,
+      "unappliedCreditPaise": 0,
+      "paymentDate": "2026-10-20",
+      "transactionReference": "UPI/293847291039/HDFC",
+      "notes": "Monthly settlement via Razorpay UPI QR",
+      "recordedBy": "Auto-Gateway",
+      "status": "Success",
+      "allocations": [
+        {
+          "invoiceId": "inv_01",
+          "invoiceNumber": "INV-2026-000101",
+          "amountPaise": 5310000
+        }
+      ],
+      "createdAt": "2026-10-20T14:30:00Z"
+    },
+    {
+      "id": "pay_02",
+      "paymentNumber": "PAY-2026-00052",
+      "customerId": "cust_03",
+      "customerName": "Paramount Logistics Hub",
+      "invoiceId": "inv_04",
+      "invoiceNumber": "INV-2026-000104",
+      "paymentMethod": "Bank Transfer",
+      "amountPaise": 1500000,
+      "allocatedPaise": 1500000,
+      "unappliedCreditPaise": 0,
+      "paymentDate": "2026-10-12",
+      "transactionReference": "NEFT/CMS284719482/ICICI",
+      "notes": "Part payment - balance committed by 10 Nov",
+      "recordedBy": "Sarah Jenkins",
+      "status": "Success",
+      "allocations": [
+        {
+          "invoiceId": "inv_04",
+          "invoiceNumber": "INV-2026-000104",
+          "amountPaise": 1500000
+        }
+      ],
+      "createdAt": "2026-10-12T16:00:00Z"
+    },
+    {
+      "id": "pay_03",
+      "paymentNumber": "PAY-2026-00053",
+      "customerId": "cust_04",
+      "customerName": "Kaveri Renewable Energy Corp",
+      "invoiceId": "inv_05",
+      "invoiceNumber": "INV-2026-000105",
+      "paymentMethod": "Bank Transfer",
+      "amountPaise": 53100000,
+      "allocatedPaise": 53100000,
+      "unappliedCreditPaise": 0,
+      "paymentDate": "2026-04-05",
+      "transactionReference": "RTGS/RBIS2026040510293/SBI",
+      "notes": "Full annual contract settlement",
+      "recordedBy": "Arjun Nambiar",
+      "status": "Success",
+      "allocations": [
+        {
+          "invoiceId": "inv_05",
+          "invoiceNumber": "INV-2026-000105",
+          "amountPaise": 53100000
+        }
+      ],
+      "createdAt": "2026-04-05T12:00:00Z"
+    }
+  ],
+  "bankStatementRows": [
+    {
+      "id": "stmt_01",
+      "date": "2026-10-20",
+      "description": "UPI/293847291039/ACME INFOTECH/HDFC",
+      "reference": "UPI/293847291039/HDFC",
+      "amountPaise": 5310000,
+      "type": "credit",
+      "matchStatus": "Matched",
+      "matchedInvoiceId": "inv_01",
+      "matchedCustomerName": "Acme Infotech Bengaluru Pvt Ltd",
+      "confidencePercent": 99,
+      "approved": true
+    },
+    {
+      "id": "stmt_02",
+      "date": "2026-10-26",
+      "description": "NEFT/ZENITH TECH/CMS82910283/AXIS",
+      "reference": "CMS82910283",
+      "amountPaise": 5310000,
+      "type": "credit",
+      "matchStatus": "Needs Review",
+      "matchedInvoiceId": "inv_03",
+      "matchedCustomerName": "Zenith Healthcare Technologies",
+      "confidencePercent": 88,
+      "approved": false
+    },
+    {
+      "id": "stmt_03",
+      "date": "2026-10-29",
+      "description": "IMPS/RET/REF9820192837/UNKNOWN ENTITY",
+      "reference": "REF9820192837",
+      "amountPaise": 1250000,
+      "type": "credit",
+      "matchStatus": "Unmatched",
+      "confidencePercent": 15,
+      "approved": false
+    }
+  ],
+  "billingRuns": [
+    {
+      "id": "run_20261025",
+      "runReference": "RUN-20261025-1001",
+      "executionDate": "2026-10-25T09:00:00Z",
+      "targetPeriod": "2026-10",
+      "invoicesCreated": 18,
+      "subscriptionsSkipped": 2,
+      "duplicatesPrevented": 0,
+      "totalInvoicedPaise": 114500000,
+      "durationMs": 420,
+      "status": "completed",
+      "skippedDetails": [
+        {
+          "subscriptionNumber": "SUB-2026-00046",
+          "customerName": "Finova NeoBanking",
+          "reason": "Subscription is in Paused status"
+        },
+        {
+          "subscriptionNumber": "SUB-2026-00047",
+          "customerName": "Apex Labs",
+          "reason": "Subscription is Closed"
+        }
+      ],
+      "invoiceIds": [
+        "inv_02"
+      ],
+      "executedBy": "Vikramaditya Sharma"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "tsk_01",
+      "title": "Follow up on Overdue Invoice INV-2026-000103",
+      "description": "Gentle chase reminder sent; phone follow-up scheduled with Rohit Verma.",
+      "assignedStaffId": "stf_02",
+      "assignedStaffName": "Arjun Nambiar",
+      "customerId": "cust_02",
+      "customerName": "Zenith Healthcare Technologies",
+      "priority": "high",
+      "status": "In Progress",
+      "dueDate": "2026-11-02",
+      "type": "invoice_followup",
+      "createdAt": "2026-10-26T09:00:00Z"
+    },
+    {
+      "id": "tsk_02",
+      "title": "Review Enterprise Quotation Q-2026-00086 with Finova",
+      "description": "Finova reviewing 15% multi-year discount proposal.",
+      "assignedStaffId": "stf_01",
+      "assignedStaffName": "Sarah Jenkins",
+      "customerId": "cust_05",
+      "customerName": "Finova NeoBanking Solutions",
+      "priority": "medium",
+      "status": "Pending",
+      "dueDate": "2026-11-05",
+      "type": "quote_review",
+      "createdAt": "2026-10-24T16:30:00Z"
+    }
+  ],
+  "approvalRequests": [
+    {
+      "id": "appr_01",
+      "requestType": "high_value_discount",
+      "entityId": "quot_03",
+      "entityReference": "Q-2026-00086 (₹70.21L)",
+      "requestedBy": "usr_staff_sarah",
+      "requestedByName": "Sarah Jenkins",
+      "approverId": "usr_admin",
+      "approverName": "Vikramaditya Sharma",
+      "amountPaise": 10500000,
+      "justification": "Strategic enterprise logo committed for 3-year multi-region rollout.",
+      "status": "Pending",
+      "createdAt": "2026-10-24T16:15:00Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "aud_1793439201175_lb2s3",
+      "timestamp": "2026-10-31T09:33:21.175Z",
+      "actor": "Vikramaditya Sharma",
+      "actorRole": "admin",
+      "action": "SMS_DISPATCHED",
+      "module": "SMS Gateway",
+      "details": "Sent SMS [MSG-SBX-MVW7E847-2334] to +91 98450 12345 (Acme Infotech) via Sandbox Gateway"
+    },
+    {
+      "id": "aud_1793439201165_78mi4",
+      "timestamp": "2026-10-31T09:33:21.165Z",
+      "actor": "Vikramaditya Sharma",
+      "actorRole": "admin",
+      "action": "USER_LOGIN",
+      "module": "Authentication",
+      "details": "User logged in from 127.0.0.1"
+    },
+    {
+      "id": "aud_1793439188311_7vmtr",
+      "timestamp": "2026-10-31T09:33:08.311Z",
+      "actor": "Vikramaditya Sharma",
+      "actorRole": "admin",
+      "action": "SMS_DISPATCHED",
+      "module": "SMS Gateway",
+      "details": "Sent SMS [MSG-SBX-MVW7DY6U-5834] to +91 98450 12345 (Acme Infotech) via Sandbox Gateway"
+    },
+    {
+      "id": "aud_1793439188302_5e4s9",
+      "timestamp": "2026-10-31T09:33:08.302Z",
+      "actor": "Vikramaditya Sharma",
+      "actorRole": "admin",
+      "action": "USER_LOGIN",
+      "module": "Authentication",
+      "details": "User logged in from 127.0.0.1"
+    },
+    {
+      "id": "aud_01",
+      "timestamp": "2026-10-20T14:30:00Z",
+      "actor": "Auto-Gateway",
+      "actorRole": "admin",
+      "action": "PAYMENT_RECORDED",
+      "module": "Payments",
+      "recordId": "pay_01",
+      "details": "Recorded UPI payment ₹53,100 for invoice INV-2026-000101"
+    },
+    {
+      "id": "aud_02",
+      "timestamp": "2026-10-25T09:00:00Z",
+      "actor": "Vikramaditya Sharma",
+      "actorRole": "admin",
+      "action": "BILLING_RUN_EXECUTED",
+      "module": "Billing Engine",
+      "recordId": "run_20261025",
+      "details": "Executed scheduled billing run RUN-20261025-1001. 18 created, 2 skipped."
+    },
+    {
+      "id": "aud_03",
+      "timestamp": "2026-10-26T08:15:00Z",
+      "actor": "System Watchdog",
+      "actorRole": "admin",
+      "action": "OVERDUE_CLASSIFICATION",
+      "module": "Invoices",
+      "recordId": "inv_03",
+      "details": "Marked invoice INV-2026-000103 as Overdue (+1 day). Added to Gentle Chase queue."
+    }
+  ],
+  "healthIssues": [
+    {
+      "id": "hlth_01",
+      "severity": "medium",
+      "title": "1 Subscription Paused - Skipped in Oct Billing",
+      "component": "Billing Engine",
+      "description": "Finova NeoBanking (SUB-2026-00046) was safely bypassed according to plan behavior.",
+      "detectedAt": "2026-10-25T09:00:00Z",
+      "resolved": true,
+      "resolutionAction": "Verified paused status with account manager"
+    },
+    {
+      "id": "hlth_02",
+      "severity": "low",
+      "title": "1 Bank Statement Row Requires Manual Review",
+      "component": "Reconciliation",
+      "description": "NEFT credit from Zenith Tech CMS82910283 pending approval in Gentle Chase.",
+      "detectedAt": "2026-10-26T12:00:00Z",
+      "resolved": false
+    }
+  ],
+  "automationRules": [
+    {
+      "id": "auto_01",
+      "name": "Gentle Chase Overdue Reminder Stage 1",
+      "trigger": "invoice_overdue",
+      "conditions": "Overdue between 1 and 7 days",
+      "action": "send_email",
+      "enabled": true,
+      "lastFiredAt": "2026-10-26T08:30:00Z",
+      "executionsCount": 38
+    },
+    {
+      "id": "auto_02",
+      "name": "Renewal Notice 14 Days Prior",
+      "trigger": "subscription_expiring_soon",
+      "conditions": "Days until expiry <= 14",
+      "action": "in_app_notification",
+      "enabled": true,
+      "lastFiredAt": "2026-10-28T04:00:00Z",
+      "executionsCount": 112
+    },
+    {
+      "id": "auto_03",
+      "name": "High-Value Discount Escalate to Admin",
+      "trigger": "high_value_quote_created",
+      "conditions": "Discount value > ₹50,000",
+      "action": "request_approval",
+      "enabled": true,
+      "lastFiredAt": "2026-10-24T16:15:00Z",
+      "executionsCount": 7
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_01",
+      "userId": "usr_admin",
+      "title": "Billing Run Completed",
+      "message": "Run RUN-20261025-1001 processed 18 invoices (₹11.45L) with zero errors.",
+      "type": "success",
+      "link": "/billing",
+      "read": false,
+      "createdAt": "2026-10-25T09:05:00Z"
+    },
+    {
+      "id": "notif_02",
+      "userId": "usr_admin",
+      "title": "Approval Request: Finova Quotation",
+      "message": "Sarah Jenkins requested 15% discount approval for ₹70.21L proposal.",
+      "type": "urgent",
+      "link": "/approvals",
+      "read": false,
+      "createdAt": "2026-10-24T16:16:00Z"
+    },
+    {
+      "id": "notif_03",
+      "userId": "usr_cust_priya",
+      "title": "Invoice INV-2026-000102 Generated",
+      "message": "Your monthly bill for ₹53,100 is ready. Due by 25 Nov 2026.",
+      "type": "info",
+      "link": "/portal/invoices",
+      "read": false,
+      "createdAt": "2026-10-25T10:00:00Z"
+    }
+  ],
+  "companySettings": {
+    "companyName": "Brightloop Technologies Private Limited",
+    "brandTagline": "Every Subscription. Every Payment. Always in Sync.",
+    "taxId": "29AABCB1234F1Z9",
+    "email": "billing@brightloop.io",
+    "phone": "+91 80 4900 1200",
+    "address": {
+      "line1": "9th Floor, Brigade Tech Gardens",
+      "line2": "Brookefield, Whitefield",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "postalCode": "560066",
+      "country": "India"
+    },
+    "currency": "INR",
+    "currencySymbol": "₹",
+    "invoicePrefix": "INV-2026-",
+    "subscriptionPrefix": "SUB-2026-",
+    "defaultPaymentTerms": "Net 30 Days",
+    "autoCloseSubscriptions": true,
+    "pauseAllBillingSafetySwitch": false,
+    "schedulerEnabled": true,
+    "timezone": "Asia/Kolkata (IST, UTC+5:30)",
+    "fiscalYearStartMonth": 4
+  },
+  "smsLogs": [
+    {
+      "id": "sms_1793439201175_mhl1",
+      "messageId": "MSG-SBX-MVW7E847-2334",
+      "to": "+91 98450 12345",
+      "customerName": "Acme Infotech",
+      "message": "Test transactional notification from Brightloop SMS Gateway",
+      "provider": "sandbox",
+      "status": "Delivered",
+      "sentAt": "2026-10-31T09:33:21.175Z",
+      "deliveredAt": "2026-10-31T09:33:21.175Z",
+      "costPaise": 25,
+      "segmentCount": 1,
+      "characterCount": 59,
+      "referenceType": "custom",
+      "dltTemplateId": "1407161234567890123"
+    },
+    {
+      "id": "sms_1793439188310_ehez",
+      "messageId": "MSG-SBX-MVW7DY6U-5834",
+      "to": "+91 98450 12345",
+      "customerName": "Acme Infotech",
+      "message": "Test transactional notification from Brightloop SMS Gateway",
+      "provider": "sandbox",
+      "status": "Delivered",
+      "sentAt": "2026-10-31T09:33:08.310Z",
+      "deliveredAt": "2026-10-31T09:33:08.310Z",
+      "costPaise": 25,
+      "segmentCount": 1,
+      "characterCount": 59,
+      "referenceType": "custom",
+      "dltTemplateId": "1407161234567890123"
+    },
+    {
+      "id": "sms_001",
+      "messageId": "MSG-SANDBOX-984210",
+      "to": "+91 98450 12345",
+      "customerName": "Acme Technologies Pvt Ltd",
+      "customerId": "cust_01",
+      "message": "Dear Acme Technologies, invoice INV-2026-001 for ₹53,100 has been generated. Due date: 2026-11-15. Settle securely at https://brightloop.io/pay/INV-2026-001 - Brightloop",
+      "provider": "sandbox",
+      "status": "Delivered",
+      "sentAt": "2026-10-30T10:15:00Z",
+      "deliveredAt": "2026-10-30T10:15:04Z",
+      "costPaise": 25,
+      "segmentCount": 1,
+      "characterCount": 154,
+      "referenceType": "invoice",
+      "referenceId": "inv_01",
+      "dltTemplateId": "1407161234567890123"
+    },
+    {
+      "id": "sms_002",
+      "messageId": "MSG-SANDBOX-984211",
+      "to": "+91 98800 23456",
+      "customerName": "BlueSky Logistics Ltd",
+      "customerId": "cust_02",
+      "message": "Hi BlueSky Logistics, gentle reminder: invoice INV-2026-002 for ₹88,500 is pending. Kindly clear outstanding by 2026-11-05. - Brightloop Ops",
+      "provider": "sandbox",
+      "status": "Delivered",
+      "sentAt": "2026-10-30T14:20:00Z",
+      "deliveredAt": "2026-10-30T14:20:03Z",
+      "costPaise": 25,
+      "segmentCount": 1,
+      "characterCount": 146,
+      "referenceType": "payment_reminder",
+      "referenceId": "inv_02",
+      "dltTemplateId": "1407161234567890124"
+    },
+    {
+      "id": "sms_003",
+      "messageId": "MSG-SANDBOX-984212",
+      "to": "+91 99000 34567",
+      "customerName": "Nexus Cloud Systems",
+      "customerId": "cust_03",
+      "message": "Nexus Cloud Systems: Payment received ₹1,06,200 for INV-2026-003. Transaction verified. Receipt available in your client portal. - Brightloop",
+      "provider": "sandbox",
+      "status": "Delivered",
+      "sentAt": "2026-10-31T06:45:00Z",
+      "deliveredAt": "2026-10-31T06:45:02Z",
+      "costPaise": 25,
+      "segmentCount": 1,
+      "characterCount": 148,
+      "referenceType": "welcome",
+      "referenceId": "pay_03",
+      "dltTemplateId": "1407161234567890125"
+    }
+  ],
+  "smsConfig": {
+    "provider": "sandbox",
+    "isSandbox": true,
+    "senderId": "BRTLOP",
+    "dltEntityId": "11014522900000452",
+    "balanceCredits": 4848,
+    "lastTestedAt": "2026-10-31T08:30:00Z"
+  }
+}

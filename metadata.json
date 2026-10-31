@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Brightloop Pulse",
+  "description": "Enterprise recurring revenue operations and subscription lifecycle platform with automated billing and financial intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

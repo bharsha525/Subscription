@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Requested Exact Theme */
+    --navy: #0F172A;
+    --gold: #EAB308;
+    --canvas: #F8FAFC;
+    --surface: #FFFFFF;
+    --surface-subtle: #F1F5F9;
+    --border-subtle: #E2E8F0;
+    --gold-glow: rgba(234, 179, 8, 0.55);
+    --gold-soft: rgba(234, 179, 8, 0.15);
+  }
+
+  .dark {
+    --navy: #0F172A;
+    --gold: #EAB308;
+    --canvas: #090D16;
+    --surface: #0F172A;
+    --surface-subtle: #1E293B;
+    --border-subtle: #334155;
+    --gold-glow: rgba(234, 179, 8, 0.65);
+    --gold-soft: rgba(234, 179, 8, 0.2);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: var(--canvas);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Elegant glowing icons utilities (subtle and premium) */
+.icon-glow-gold {
+  filter: drop-shadow(0 0 6px rgba(234, 179, 8, 0.7));
+}
+
+.icon-glow-gold-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-glow-gold-hover:hover {
+  filter: drop-shadow(0 0 7px rgba(234, 179, 8, 0.75));
+  color: #EAB308;
+}
+
+.nav-icon-active {
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.85));
+  color: #EAB308 !important;
+}
+
+.nav-icon-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.group:hover .nav-icon-hover {
+  filter: drop-shadow(0 0 6px rgba(234, 179, 8, 0.6));
+  color: #EAB308;
+}
+
+.action-icon-glow {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.action-icon-glow:hover {
+  filter: drop-shadow(0 0 6px rgba(234, 179, 8, 0.7));
+}
+
+/* Ambient Navy & Gold mesh background glow */
+.ambient-glow {
+  background: radial-gradient(circle at 15% 15%, rgba(234, 179, 8, 0.06) 0%, transparent 45%),
+              radial-gradient(circle at 85% 85%, rgba(15, 23, 42, 0.05) 0%, transparent 45%);
+}
+
+.dark .ambient-glow {
+  background: radial-gradient(circle at 15% 15%, rgba(234, 179, 8, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 85% 85%, rgba(234, 179, 8, 0.02) 0%, transparent 50%);
+}
+
+/* Subtle animated pulse waveform */
+@keyframes pulseWave {
+  0% { transform: scaleY(0.4); opacity: 0.6; }
+  50% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(0.4); opacity: 0.6; }
+}
+
+.animate-pulse-bar {
+  animation: pulseWave 1.8s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
