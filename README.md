@@ -1,4 +1,4 @@
-# Brightloop Pulse — Subscription Management & Recurring Revenue Operations
+#  Brightloop Pulse — Subscription Management & Recurring Revenue Operations
 
 Every Subscription. Every Payment. Always in Sync.
 
